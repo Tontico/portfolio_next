@@ -14,11 +14,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        'customTitle': ['Play', 'sans'],
+        'customTitle': ['Anta'],
         'customSubtitle': ['Changa', 'sans'],
         'customText': ['Pridi', 'sans']
         
       },
+      colors: {
+        'customColor':'#ff7a13',
+      }
     },
   },
   plugins: [],
