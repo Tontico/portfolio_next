@@ -21,7 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet" />
 
       </head>
-      <body className="bg-slate-900">{children}</body>
+      <body className="">{children}</body>
     </html>
   );
 }

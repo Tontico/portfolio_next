@@ -1,22 +1,52 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import SwitchTheme from "./SwitchTheme";
+import { useEffect, useState } from "react";
+import Cookies from 'js-cookie';
 
 const Header = () => {
+    const [darkMode, setDarkMode] = useState<boolean>(false);
+    const logo = !darkMode ? "images/logo-light.png" : "images/logo-dark.png";
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    }
+
+
+    useEffect(() => {
+        const darkModeCookies = Cookies.get('darkMode');
+        if (darkModeCookies === "enabled") {
+            setDarkMode(true);
+        }
+    }, [])
+
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add('dark');
+            Cookies.set('darkMode', 'enabled', { expires: 7 });
+        } else {
+            document.body.classList.remove('dark');
+            Cookies.remove('darkMode');
+        }
+
+    }, [darkMode])
+
 
     return (
         <>
-            <header className="h-24 flex items-center font-customTitle ">
-                <nav className="flex items-center w-full p-5">
-                    <Link href="/" className="w-1/3"><img src="/images/logo1.png" className="w-32" alt="logo"></img></Link>
-                    <ul className="flex justify-evenly items-center w-1/3">
-                        <li className="">Accueil</li>
-                        <li className="mx-5">Mes projets</li>
+            <header className="h-28 flex items-center text-xl">
+                <nav className=" h-28 flex items-center w-full">
+                    <Link href="/" className="w-1/3"><img src={logo} className="w-32" alt="logo"></img></Link>
+                    <ul className="flex justify-evenly h-full items-center w-1/3">
+                        <li className=""><Link href='/'>Accueil</Link></li>
+                        <li className="mx-10">Mes projets</li>
                         <li className="">Contacts</li>
                     </ul>
-                    <div>
-                        <FontAwesomeIcon icon={faGithub} />
-                        <FontAwesomeIcon icon={faLinkedin} />
+                    <div className="w-1/3 flex justify-center items-center mt-2">
+                        <a href="https://github.com/Tontico" className=""><FontAwesomeIcon icon={faGithub} className="h-8 mt-0.5 text-customColor" /></a>
+                        <a href="https://www.linkedin.com/in/anthony-suraci/" className=""><FontAwesomeIcon icon={faLinkedin} className="h-8 mx-8 mt-1 text-customColor" /></a>
+                        <SwitchTheme darkMode={darkMode} toggleTheme={toggleDarkMode} />
                     </div>
                 </nav>
             </header>
