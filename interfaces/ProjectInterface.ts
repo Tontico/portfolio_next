@@ -1,8 +1,8 @@
 export default interface ProjectInterface {
-  title: string;
   id: number;
+  title: string;
   images: string;
-  languages: string;
-  année: number;
+  languages: [];
+  annee: number;
   description: string;
 }
