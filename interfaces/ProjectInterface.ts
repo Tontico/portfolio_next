@@ -3,6 +3,6 @@ export default interface ProjectInterface {
   title: string;
   images: string;
   languages: [];
-  annee: number;
+  annee: string;
   description: string;
 }

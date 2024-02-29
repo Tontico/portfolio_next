@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import Link from "next/link";
 
 export default function Home() {
 
@@ -133,7 +134,7 @@ export default function Home() {
                         </div>
                         <div className="w-full px-1">
                           <strong>2017-2018</strong>
-                          <h4>Bac Scientifique - <em>Lycée privée St Joseph</em></h4>
+                          <h4>Bac Scientifique - <em>Lycée privée St Joseph Sète</em></h4>
                         </div>
                       </div>
                     </div>
@@ -177,7 +178,7 @@ export default function Home() {
                   duration: 1,
                   restDelta: 1,
                 }}>
-                <button className="bg-customColor  rounded-full p-3 w-40"><a href="/cv/CV_Anthony_Suraci.pdf" className="text-white">Mes projets</a></button>
+                <button className="bg-customColor  rounded-full p-3 w-40"><Link href='/project'>Mes projets</Link></button>
                 <button className="rounded-full p-3 w-40 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutSection}>Contactez moi !</button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

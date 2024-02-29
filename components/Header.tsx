@@ -13,7 +13,6 @@ const Header = () => {
         setDarkMode(!darkMode);
     }
 
-
     useEffect(() => {
         const darkModeCookies = Cookies.get('darkMode');
         if (darkModeCookies === "enabled") {
@@ -40,7 +39,7 @@ const Header = () => {
                     <Link href="/" className="w-1/3"><img src={logo} className="w-32" alt="logo"></img></Link>
                     <ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
-                        <li className="mx-10">Mes projets</li>
+                        <li className="mx-10"><Link href='/project'>Mes projets</Link></li>
                         <li className="">Contacts</li>
                     </ul>
                     <div className="w-1/3 flex justify-center items-center mt-2">
