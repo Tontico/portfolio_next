@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "WyGame",
-    "images": "",
+    "images": "/images/formation/wygame.png",
     "languages": ["ReactJS", "PHP"],
     "annee": "Janvier - Mars 2024",
     "description": "Conception d'un jeu vidéo doodleJump like en React coté applicatif et utilisation pluggins Wordpress en PHP pour la liaison avec la base de données"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "TP React TypeScript",
-    "images": "",
+    "images": "/images/formation/digivivre.png",
     "languages": ["React", "TypeScript"],
     "annee": "Janvier 2024",
     "description": "Conception d'une page en React TypeScript de vente de jouets de musique, utilisation d'un serveur json et des differentes requetes CRUD"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "Les maestros de la Symphony",
-    "images": "",
+    "images": "/images/formation/symfony.png",
     "languages": ["Symfony", "HTML", "CSS", "Javascript"],
     "annee": "Decembre 2023 - Janvier 2024",
     "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de diffé"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "title": "Digi'Complément",
-    "images": "",
+    "images": "/images/formation/prestashop-module.png",
     "languages": ["Symfony", "Prestashop", "PHP", "CSS"],
     "annee": "Decembre 2023",
     "description": "Conception d'un site e commerce de vente de complément alimentaire avec Prestashop et création d'un module personalisable back et front office representant un popUp de 3 promotions choisis "
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "title": "TODO PHP PROJECT",
-    "images": "",
+    "images": "/images/formation/php-projet.png",
     "languages": ["PHP", "HTML", "CSS", "Javascript"],
     "annee": "Novembre 2023",
     "description": "Conception d'un site de gestion de projets en PHP programmation orienté objet, modèle MVC, en équipe de 3"

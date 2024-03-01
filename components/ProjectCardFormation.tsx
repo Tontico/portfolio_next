@@ -18,15 +18,21 @@ const ProjectCardFormation = () => {
 
     return (
         <>
-            <div>
+            <section className="grid grid-cols-3 w-11/12 h-screen gap-4">
                 {
                     formationProject.map((project) => (
-                        <div key={project.id} className="">
-                            <h3>{project.title}</h3>
+                        <div key={project.id} className="flex justify-center f-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 ">
+                            <img src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 "></img>
+                            <h3 className="my-3">{project.title}</h3>
+                            {/* <div>
+                                {project.languages.map((langues, index) => (
+                                    <span key={index}>{langues}</span>
+                                ))}
+                            </div> */}
                         </div>
                     ))
                 }
-            </div>
+            </section>
 
         </>
     );
