@@ -6,7 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./styles/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode:"class",
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -15,22 +15,25 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        'customTitle': ['Play',"sans"],
-        'customSubtitle': ['Changa', 'sans'],
-        'customText': ['Pridi', 'sans']
-        
+        customTitle: ["Play", "sans"],
+        customSubtitle: ["Changa", "sans"],
+        customText: ["Pridi", "sans"],
       },
       colors: {
-        'customColor':'#ff7a13',
-        'light':{
-          'primary': '#f8f8f8',
-          'secondary': 'rgb(51 65 85)',
+        customColor: "#ff7a13",
+        light: {
+          primary: "#f8f8f8",
+          secondary: "rgb(51 65 85)",
         },
-        'dark':{
-          'primary':'rgb(51 65 85)',
-          'secondary':'#f8f8f8',
-        }
-      }
+        dark: {
+          primary: "rgb(51 65 85)",
+          secondary: "#f8f8f8",
+        },
+      },
+      backgroundColor: {
+        customBg: "rgba(0, 0, 0, 0.5)",
+        customDarkBg: "#1f2227",
+      },
     },
   },
   plugins: [],
