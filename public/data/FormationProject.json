@@ -21,7 +21,7 @@
     "images": "/images/formation/symfony.png",
     "languages": ["Symfony", "HTML", "CSS", "Javascript"],
     "annee": "Decembre 2023 - Janvier 2024",
-    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de diffé"
+    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de différents controller et création du design"
   },
   {
     "id": 4,

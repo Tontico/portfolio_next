@@ -19,9 +19,11 @@ const ProjectCardFormation = () => {
             setToggleModalProject(!toggleModalProject);
         }
     }
+    
     const closeProject = () => {
         setToggleModalProject(false);
     }
+
     useEffect(() => {
         fetchProject();
     }, []);
@@ -34,14 +36,8 @@ const ProjectCardFormation = () => {
                         <div key={project.id} className="flex justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 " onClick={() => toggleProject(project.id)}>
                             <img src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 "></img>
                             <h3 className="my-3">{project.title}</h3>
-                            {/* <div>
-                                {project.languages.map((langues, index) => (
-                                    <span key={index}>{langues}</span>
-                                ))}
-                            </div> */}
                         </div>
                     ))
-
                 }
                 {toggleModalProject && selectedProjectId && (
                     <>

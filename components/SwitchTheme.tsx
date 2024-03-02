@@ -8,7 +8,6 @@ interface SwitchThemeProps {
     toggleTheme: () => void;
 }
 const SwitchTheme: React.FC<SwitchThemeProps> = ({ darkMode, toggleTheme }) => {
-
     return (
         <label className="switch">
             <input type="checkbox" id="toggle" onClick={toggleTheme} checked={darkMode} onChange={() => {}}  />

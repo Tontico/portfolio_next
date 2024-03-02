@@ -51,7 +51,7 @@ const Header = () => {
 
                         </a>
                         <a href="https://www.linkedin.com/in/anthony-suraci/" className="group mx-5 w-12 hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
-                            <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 shrink-0  fill-neutral-50" />
+                            <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 shrink-0 fill-neutral-50" />
                             <span
                                 className="origin-left inline-flex w-full text-base duration-100 ml-1 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all whitespace-nowrap overflow-hidden"
                             >Anthony Suraci</span>
