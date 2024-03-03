@@ -34,6 +34,12 @@ const config: Config = {
         customBg: "rgba(0, 0, 0, 0.5)",
         customDarkBg: "#1f2227",
       },
+      height: {
+        custom: "650px",
+      },
+      width: {
+        custom: "680px",
+      },
     },
   },
   plugins: [],

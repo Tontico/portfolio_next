@@ -14,7 +14,7 @@ export default function Projects() {
     return (
         <>
             <Header />
-            <main className="h-full w-full p-5 flex justify-center items-start">
+            <main className="h-full w-11/12 mx-auto mt-5 flex justify-center items-start">
                 <ProjectCardFormation />
             </main>
         </>
