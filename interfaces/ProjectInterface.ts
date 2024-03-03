@@ -5,4 +5,5 @@ export default interface ProjectInterface {
   languages: [];
   annee: string;
   description: string;
+  link: string;
 }

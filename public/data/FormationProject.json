@@ -5,7 +5,8 @@
     "images": "/images/formation/wygame.png",
     "languages": ["React", "PHP"],
     "annee": "Jan - Mars 2024",
-    "description": "Conception d'un jeu vidéo doodleJump like en React coté applicatif et utilisation pluggins Wordpress en PHP pour la liaison avec la base de données"
+    "description": "Conception d'un jeu vidéo doodleJump like en React coté applicatif et utilisation pluggins Wordpress en PHP pour la liaison avec la base de données",
+    "link": "https://github.com/Tontico/Wytest-Jump-Game"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "images": "/images/formation/digivivre.png",
     "languages": ["React", "TypeScript"],
     "annee": "Janvier 2024",
-    "description": "Conception d'une page en React TypeScript de vente de jouets de musique, utilisation d'un serveur json et des differentes requetes CRUD"
+    "description": "Conception d'une page en React TypeScript de vente de jouets de musique, utilisation d'un serveur json et des differentes requetes CRUD",
+    "link": "https://github.com/Tontico/Les-Maestros"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "images": "/images/formation/symfony.png",
     "languages": ["Symfony", "HTML", "CSS", "Javascript"],
     "annee": "Dec 2023 - Jan 2024",
-    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de différents controller et création du design"
+    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de différents controller et création du design",
+    "link": "https://github.com/Tontico/Les-Maestros"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "images": "/images/formation/prestashop-module.png",
     "languages": ["Symfony", "Prestashop", "PHP", "CSS"],
     "annee": "Decembre 2023",
-    "description": "Conception d'un site e commerce de vente de complément alimentaire avec Prestashop et création d'un module personalisable back et front office representant un popUp de 3 promotions choisis "
+    "description": "Conception d'un site e commerce de vente de complément alimentaire avec Prestashop et création d'un module personalisable back et front office representant un popUp de 3 promotions choisis",
+    "link": "https://github.com/Tontico/PopUp-module-Prestashop "
   },
   {
     "id": 5,
@@ -37,6 +41,7 @@
     "images": "/images/formation/php-projet.png",
     "languages": ["PHP", "HTML", "CSS", "Javascript"],
     "annee": "Novembre 2023",
-    "description": "Conception d'un site de gestion de projets en PHP programmation orienté objet, modèle MVC, en équipe de 3"
+    "description": "Conception d'un site de gestion de projets en PHP programmation orienté objet, modèle MVC, en équipe de 3",
+    "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
   }
 ]

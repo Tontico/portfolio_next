@@ -33,10 +33,10 @@ const ProjectCardFormation = () => {
 
     return (
         <>
-            <section className="grid grid-cols-3 w-full h-full gap-4">
+            <section className="grid grid-cols-3 w-full h-full gap-6">
                 {
                     formationProject.map((project) => (
-                        <div key={project.id} className="flex p-1 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 " onClick={() => toggleProject(project.id)}>
+                        <div key={project.id} className="flex p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 " onClick={() => toggleProject(project.id)}>
                             <img src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 "></img>
                             <h3 className="my-3">{project.title}</h3>
                         </div>
@@ -53,24 +53,24 @@ const ProjectCardFormation = () => {
                             <div className="w-custom  p-3 mx-auto">
                                 <img className="rounded-md" src={formationProject.find(project => project.id === selectedProjectId)?.images}></img>
                             </div>
-                            <div className="flex flex-col  w-11/12 mx-auto justify-center items-center">
+                            <div className="flex flex-col  w-11/12 h-64 mx-auto justify-center items-center">
                                 <div className=" w-full flex justify-evenly items-center">
-                                    <h3 className=" my-1 w-1/2 text-center text-xl">Descriptif du projet</h3>
-                                    <h3 className="my-1 w-1/2 text-center text-xl">Languages Utilisés</h3>
+                                    <h3 className=" mb-1 w-1/2 text-center text-xl">Descriptif du projet</h3>
+                                    <h3 className="mb-1 w-1/2 text-center text-xl">Languages Utilisés</h3>
                                 </div>
-                                <div className="w-full p-2 gap-4 flex justify-center items-center">
+                                <div className="w-full p-2 gap-4 mb-3    flex justify-center items-center">
                                     <p className="w-1/2">{formationProject.find(project => project.id === selectedProjectId)?.description}</p>
                                     <div className="w-1/2 grid grid-cols-2  text-center gap-4 ">{formationProject.find(project => project.id === selectedProjectId)?.languages.map((langues, index) => (
-                                        <span key={index} className="dark:bg-slate-500 dark:hover:bg-customColor dark:hover:text-white bg-slate-600 hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-5/6 mx-auto transition duration-200">{langues}</span>
+                                        <span key={index} className="dark:bg-slate-500 dark:hover:bg-customColor dark:hover:text-white bg-slate-600 hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-11/12 mx-auto transition duration-200">{langues}</span>
                                     ))}</div>
                                 </div>
+                                <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="group w-12 hover:w-48 h-12 relative mx-auto mt-1 text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black bg-white cursor-pointer rounded-full border-2 border-customColor dark:bg-customDarkBg  ">
+                                    <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
+                                    <span className="origin-left inline-flex text-base duration-100 ml-1  group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-black dark:border-l-white px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                                        En savoir plus !
+                                    </span>
+                                </a>
                             </div>
-                            <a href="https://github.com/Tontico" className="group w-12 hover:w-48 h-12 relative mt-2 mx-auto text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black bg-white cursor-pointer rounded-full border-2 border-customColor dark:bg-customDarkBg  ">
-                                <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
-                                <span className="origin-left inline-flex text-base duration-100 ml-1  group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-black px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                                    En savoir plus !
-                                </span>
-                            </a>
                         </div>
                     </>
                 )}
