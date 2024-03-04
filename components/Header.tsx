@@ -55,11 +55,14 @@ const Header = () => {
             <header className="h-28 flex items-center text-xl" id="headerScrolled">
                 <nav className=" h-28 flex items-center w-full">
                     <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><img src={logo} className="w-32 phone:w-20" alt="logo"></img></Link>
-                    {width >= 1024 && (<ul className="flex justify-evenly h-full items-center w-1/3">
+                    {width >= 1024 ? (<ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
                         <li className="mx-10"><Link href='/project'>Mes projets</Link></li>
                         <li className="">Contacts</li>
-                    </ul>)}
+                    </ul>) :
+                        (<button id="burger" className="ml-8 w-full" onClick={toggleMenu}>
+                            {openBurger ? <FontAwesomeIcon icon={faTimes} className="w-8 h-8" /> : <FontAwesomeIcon icon={faBars} className="w-8 h-8" />}
+                        </button>)}
                     <div className="w-1/3 phone:w-2/3 flex justify-center phone:justify-start items-center mt-2 phone:mr-5">
                         <a href="https://github.com/Tontico" className="group w-12  hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
                             <FontAwesomeIcon icon={faGithub} className="w-8 h-8  shrink-0 fill-neutral-50" />
@@ -75,11 +78,7 @@ const Header = () => {
                             >Anthony Suraci</span>
                         </a>
                         <SwitchTheme darkMode={darkMode} toggleTheme={toggleDarkMode} />
-                        {width <= 1024 && (
-                            <button id="burger" className="ml-8 w-full" onClick={toggleMenu}>
-                                {openBurger ? <FontAwesomeIcon icon={faTimes} className="w-8 h-8" /> : <FontAwesomeIcon icon={faBars} className="w-8 h-8" />}
-                            </button>
-                        )}
+
 
                     </div>
                 </nav>
