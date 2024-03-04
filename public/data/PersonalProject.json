@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "PortfolioV2 Next.Js",
-    "images": "/images/formation/wygame.png",
+    "images": "/images/perso/portfolioNext.png",
     "languages": ["Next.Js", "TypeScript", "Tailwind"],
     "annee": "Mars 2024",
     "description": "Conception d'une deuxieme version de mon portfolio en Next.js et tailwind coté applicatif, utilisation du router de Next ainsi que de framer motion ",
@@ -10,38 +10,48 @@
   },
   {
     "id": 2,
-    "title": "TP React TypeScript",
-    "images": "/images/formation/digivivre.png",
-    "languages": ["React", "TypeScript"],
-    "annee": "Janvier 2024",
-    "description": "Conception d'une page en React TypeScript de vente de jouets de musique, utilisation d'un serveur json et des differentes requetes CRUD",
-    "link": "https://github.com/Tontico/Les-Maestros"
+    "title": "PortfolioV1 Vanilla",
+    "images": "/images/perso/portfolio-v1.png",
+    "languages": ["HTML", "CSS","bootstrap","Javascript"],
+    "annee": "Novembre 2023",
+    "description": "Conception d'un CV single page responsive en HTML/Boostrap et JavaScript",
+    "link": "https://github.com/Tontico/Portfolio-AnthonySuraci"
   },
   {
     "id": 3,
-    "title": "Les maestros de la Symphony",
-    "images": "/images/formation/symfony.png",
-    "languages": ["Symfony", "HTML", "CSS", "Javascript"],
-    "annee": "Dec 2023 - Jan 2024",
-    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de différents controller et création du design",
-    "link": "https://github.com/Tontico/Les-Maestros"
+    "title": "Citrus Slideshow",
+    "images": "/images/perso/slideshow.png",
+    "languages": ["Javascript", "CSS"],
+    "annee": "Octobre 2023",
+    "description": "Conception d'un caroussel en JavaScript orienté objet, design en css",
+    "link": "https://github.com/Tontico/Diginamic-2023/tree/main/JavaScript/JS_Avanc%C3%A9e/javascript/Exo%20JS%20Avanc%C3%A9e%20Carrousel"
   },
   {
     "id": 4,
-    "title": "Digi'Complément",
-    "images": "/images/formation/prestashop-module.png",
-    "languages": ["Symfony", "Prestashop", "PHP", "CSS"],
-    "annee": "Decembre 2023",
-    "description": "Conception d'un site e commerce de vente de complément alimentaire avec Prestashop et création d'un module personalisable back et front office representant un popUp de 3 promotions choisis",
-    "link": "https://github.com/Tontico/PopUp-module-Prestashop "
+    "title": "TodoList",
+    "images": "/images/perso/todolist.png",
+    "languages": ["HTML", "CSS", "Javascript"],
+    "annee": "Octobre 2023",
+    "description": "Conception d'une todolist en JavaScript, manipulation du DOM",
+    "link": "https://github.com/Tontico/JS-Project/tree/main/To-do-list"
   },
   {
     "id": 5,
-    "title": "TODO PHP PROJECT",
-    "images": "/images/formation/php-projet.png",
-    "languages": ["PHP", "HTML", "CSS", "Javascript"],
-    "annee": "Novembre 2023",
-    "description": "Conception d'un site de gestion de projets en PHP programmation orienté objet, modèle MVC, en équipe de 3",
-    "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
+    "title": "CalculatorJs",
+    "images": "/images/perso/calculator.png",
+    "languages": ["HTML", "CSS", "Javascript"],
+    "annee": "Octobre 2023",
+    "description": "Conception d'une calculatrice en JavaScript, manipulation du DOM",
+    "link": "https://github.com/Tontico/JS-Project/tree/main/Calculator "
+  },
+  {
+    "id": 6,
+    "title": "First Homepage",
+    "images": "/images/perso/first-homepage.png",
+    "languages": ["HTML", "CSS"],
+    "annee": "Mai 2022",
+    "description": "HomePage de mon premier projet personnels, site web portant sur les disciplines de la musculation et gestionnaire de programmes sportifs personalisable",
+    "link": "https://github.com/Tontico/Code-perso/tree/main/Tuto/Home"
   }
+  
 ]

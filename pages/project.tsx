@@ -3,35 +3,38 @@ import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import ProjectCardFormation from "@/components/ProjectCardFormation";
 import ProjectCardPerso from "@/components/ProjectCardPerso";
 
 
 export default function Projects() {
 
-    const [isProjetFormation, setIsProjetFormation] = useState<boolean>(true);
+    const [isProjet, setIsProjet] = useState<boolean>(true);
 
     const toggleProjectFormation = () => {
-        setIsProjetFormation(true);
+        setIsProjet(true);
     };
 
     const toggleProjectPerso = () => {
-        setIsProjetFormation(false);
+        setIsProjet(false);
     };
 
     return (
         <>
             <Header />
-            <main className="h-full flex flex-col w-11/12 mx-auto  flex justify-center items-start">
+            <main className="h-full mb-10 flex flex-col w-11/12 mx-auto  flex justify-center items-start">
                 <div className="mx-auto my-10  gap-4 text-xl flex justify-center items-center w-2/3">
-                    <h2 onClick={toggleProjectFormation}>Projets de formations</h2>
-                    <h2 onClick={toggleProjectPerso}>Projets personnels</h2>
+                    <h2 onClick={toggleProjectFormation} className={isProjet ? "text-customColor cursor-pointer transition-colors transition-duration-300" : "hover:text-customColor cursor-pointer transition-colors transition-duration-300"}>Projets de formations</h2>
+                    <h2 onClick={toggleProjectPerso} className={isProjet ? "hover:text-customColor cursor-pointer transition-colors transition-duration-300" : "text-customColor cursor-pointer transition-colors transition-duration-300"}>Projets personnels</h2>
                 </div>
-                {isProjetFormation ? (
-                    <ProjectCardFormation />
-                ) : (
-                    <ProjectCardPerso />
-                )}
+                <section className="transition-all duration-300">
+                    {isProjet ? (
+                        <ProjectCardFormation />
+                    ) : (
+                        <ProjectCardPerso />
+                    )}
+                </section>
             </main>
         </>
     )

@@ -32,14 +32,18 @@ const config: Config = {
       },
       backgroundColor: {
         customBg: "rgba(0, 0, 0, 0.5)",
+        customPr: "rgba(0, 0, 0, 0.8)",
         customDarkBg: "#1f2227",
       },
       height: {
         custom: "650px",
       },
       width: {
-        custom: "680px",
+        custom: "700px",
       },
+    },
+    screens: {
+      'phone': {'max': '1024px'}, // Appliquer seulement aux écrans dont la largeur est inférieure à 640px
     },
   },
   plugins: [],
