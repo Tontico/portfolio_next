@@ -33,7 +33,7 @@ const ProjectCardFormation = () => {
 
     return (
         <>
-            <section className="grid grid-cols-3 w-full h-full gap-6">
+            <section className="grid grid-cols-2 w-full h-full gap-6">
                 {
                     formationProject.map((project) => (
                         <div key={project.id} className="flex p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 " onClick={() => toggleProject(project.id)}>
@@ -44,7 +44,7 @@ const ProjectCardFormation = () => {
                 }
                 {toggleModalProject && selectedProjectId && (
                     <>
-                        <div className="absolute top-0 left-0 w-full h-full bg-customBg" onClick={closeProject}></div>
+                        <div className="absolute top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
                         <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-100 dark:bg-customDarkBg h-custom ">
                             <div className="flex justify-center items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl px-5 ">{formationProject.find(project => project.id === selectedProjectId)?.title}: {formationProject.find(project => project.id === selectedProjectId)?.annee}</h2>

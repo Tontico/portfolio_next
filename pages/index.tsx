@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <Header />
       <main className="flex justify-center flex-col items-center" id="mainScrolled">
-        <section className="flex w-full justify-center gap-6 items-center">
+        <section className=" section-index flex w-full justify-center gap-6 items-center">
           <motion.div
             initial={{ x: -400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </section>
         {aboutVisible &&
-          (<section className='w-full'>
+          (<section className=' section-index w-full'>
             <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
             <div className="border border-customColor w-32 mx-auto"></div>
             <div className="flex flex-col items-center h-full">
