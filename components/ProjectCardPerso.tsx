@@ -49,7 +49,7 @@ const ProjectCardPerso = () => {
                 {toggleModalProject && selectedProjectId && (
                     <>
                         <div className="fixed top-0 left-0 w-full h-full bg-customBg" onClick={closeProject}></div>
-                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-100 dark:bg-customDarkBg h-custom ">
+                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-100 dark:bg-customDarkBg h-custom phone:h-5/6 phone:w-11/12">
                             <div className="flex justify-center items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl px-5 ">{persoProject.find(project => project.id === selectedProjectId)?.title}: {persoProject.find(project => project.id === selectedProjectId)?.annee}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-4xl text-end me-5 cursor-pointer">&times;</span>

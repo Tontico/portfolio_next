@@ -53,17 +53,14 @@ const Header = () => {
     return (
         <>
             <header className="h-28 flex items-center text-xl" id="headerScrolled">
-                <nav className=" h-28 flex items-center w-full">
-                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><img src={logo} className="w-32 phone:w-20" alt="logo"></img></Link>
-                    {width >= 1024 ? (<ul className="flex justify-evenly h-full items-center w-1/3">
+                <nav className=" h-28 phone:relative flex items-center w-full">
+                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><img src={logo} className="w-36 phone:mb-1 phone:w-24" alt="logo"></img></Link>
+                    {width >= 1024 && (<ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
                         <li className="mx-10"><Link href='/project'>Mes projets</Link></li>
-                        <li className="">Contacts</li>
-                    </ul>) :
-                        (<button id="burger" className="ml-8 w-full" onClick={toggleMenu}>
-                            {openBurger ? <FontAwesomeIcon icon={faTimes} className="w-8 h-8" /> : <FontAwesomeIcon icon={faBars} className="w-8 h-8" />}
-                        </button>)}
-                    <div className="w-1/3 phone:w-2/3 flex justify-center phone:justify-start items-center mt-2 phone:mr-5">
+                        <li className=""><Link href='/contact'>Contact</Link></li>
+                    </ul>)}
+                    <div className="w-1/3 phone:w-2/4 flex justify-center phone:justify-center items-center mt-2 phone:m-0 phone:absolute phone:top-1/2 phone:left-1/2 phone:transform phone:-translate-x-1/2 phone:-translate-y-1/2">
                         <a href="https://github.com/Tontico" className="group w-12  hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
                             <FontAwesomeIcon icon={faGithub} className="w-8 h-8  shrink-0 fill-neutral-50" />
                             <span className="origin-left inline-flex text-base duration-100 ml-1 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
@@ -78,9 +75,11 @@ const Header = () => {
                             >Anthony Suraci</span>
                         </a>
                         <SwitchTheme darkMode={darkMode} toggleTheme={toggleDarkMode} />
-
-
                     </div>
+
+                    {width <= 1024 && (<button id="burger" className=" flex w-24 justify-center items-center phone:absolute phone:top-1/2 phone:right-0 phone:transform phone:-translate-y-1/2" onClick={toggleMenu}>
+                        {openBurger ? <FontAwesomeIcon icon={faTimes} className="w-8 h-8" /> : <FontAwesomeIcon icon={faBars} className="w-8 h-8" />}
+                    </button>)}
                 </nav>
             </header>
             <div className="border border-customColor w-1/3 phone:w-2/3 mx-auto"></div>

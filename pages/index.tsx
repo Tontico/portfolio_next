@@ -25,11 +25,18 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (aboutVisible) {
+    if (aboutVisible && window.innerWidth >= 1024) {
       const section = document.getElementById('sectionScrolled');
       if (section) {
         setTimeout(() => {
           section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }, 300);
+      }
+    } else if (window.innerWidth <= 1024) {
+      const titleScrolled = document.getElementById('titleScrolled');
+      if (titleScrolled) {
+        setTimeout(() => {
+          titleScrolled.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }, 300);
       }
     }
@@ -89,7 +96,7 @@ export default function Home() {
         </section>
         {aboutVisible &&
           (
-            <section className="mb-10">
+            <section id="titleScrolled" className="mb-10">
               <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
               <div className="border border-customColor w-32 mx-auto"></div>
               <div className="flex flex-col items-center h-full">
@@ -106,7 +113,7 @@ export default function Home() {
                         restDelta: 1,
                       }}>
                       <div className="flex items-center gap-4 justify-center h-80  phone:flex-col phone:justify-start phone:h-full">
-                        <div className="border-4 p-1 border-customColor flex flex-col items-center rounded-lg w-1/2 h-3/4 phone:w-full phone:h-full">
+                        <div className="border-4 p-1 border-customColor flex flex-col items-center rounded-lg w-1/2 h-3/4 ml-5 phone:m-0 phone:w-full phone:h-full">
                           <h3 className="text-2xl">Experience Professionnelles</h3>
                           <FontAwesomeIcon icon={faCode} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
@@ -141,7 +148,7 @@ export default function Home() {
                       </div>
                     </motion.div>
                     <motion.div
-                      className="w-full phone:my-3"
+                      className="w-full  ml-5 phone:my-3"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{
@@ -151,7 +158,7 @@ export default function Home() {
                         duration: 1,
                         restDelta: 1,
                       }}>
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia suscipit ullam qui sed at pariatur ab obcaecati numquam totam asperiores corporis deserunt aspernatur porro nisi inventore ad, beatae quaerat deleniti.</p>
+                      <p>Dans le domaine du nu</p>
                     </motion.div>
                   </div>
                   <motion.div

@@ -21,6 +21,7 @@ const config: Config = {
       },
       colors: {
         customColor: "#ff7a13",
+        customDarkBg: "#1f2227",
         light: {
           primary: "#f8f8f8",
           secondary: "rgb(51 65 85)",
@@ -37,6 +38,7 @@ const config: Config = {
       },
       height: {
         custom: "650px",
+        contact: "500px"
       },
       width: {
         custom: "700px",
