@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
-app.post("/send-email", async (req, res) => {
+app.post("/mailer", async (req, res) => {
   const { firstname, lastname, email, phone, subject, message } = req.body;
 
   let transporter = nodemailer.createTransport({
