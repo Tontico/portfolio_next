@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
+import Image from "next/image";
 const Header = () => {
 
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [width, setWidth] = useState<number>(0);
     const [openBurger, setOpenBurger] = useState<boolean>(false);
-    const logo = !darkMode ? "images/logo-light.png" : "images/logo-dark.png";
+    const logo = !darkMode ? "/images/logo-light.png" : "/images/logo-dark.png";
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -54,7 +55,7 @@ const Header = () => {
         <>
             <header className="h-28 flex items-center text-xl" id="headerScrolled">
                 <nav className=" h-28 phone:relative flex items-center w-full">
-                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><img src={logo} className="w-36 phone:mb-1 phone:w-24" alt="logo"></img></Link>
+                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><Image src={logo} className="w-36 phone:mb-1 phone:w-24" alt="logo" width={2536} height={2536}/></Link>
                     {width >= 1024 && (<ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
                         <li className="mx-10"><Link href='/project'>Mes projets</Link></li>

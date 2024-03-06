@@ -123,7 +123,7 @@ export default function Home() {
                           <h3 className="text-2xl">Experience Professionnelles</h3>
                           <FontAwesomeIcon icon={faCode} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
-                            <strong>10/01/2024 - aujourd\'hui</strong>
+                            <strong>10/01/2024 - aujourd&apos;'hui</strong>
                             <h4>Alternant développeur Web fullStack - <em>WyTest Montpellier</em></h4>
                           </div>
                           <div className="w-full px-1">
