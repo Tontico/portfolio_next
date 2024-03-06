@@ -23,7 +23,7 @@ const FormContact = () => {
     });
     const [validatedLogs, setValidatedLogs] = useState<boolean>(false);
     const apiUrl = process.env.API_URL;
-
+    console.log(apiUrl);
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
         let formattedInput = input.replace(/(\d{2})(?=\d)/g, '$1 ');
