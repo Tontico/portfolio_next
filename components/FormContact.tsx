@@ -41,8 +41,7 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post(`https://nodejs-serverless-function-express-five-xi.vercel.app
-            /send-email`, formData);
+            await axios.post(`https://nodejs-serverless-function-express-five-xi.vercel.app/send-email`, formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',
