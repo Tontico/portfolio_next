@@ -1,9 +1,0 @@
-{
-  "functions": {
-    "api/mailer.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
-}
-
-  
