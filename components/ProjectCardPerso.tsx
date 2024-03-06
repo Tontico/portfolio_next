@@ -2,6 +2,7 @@ import ProjectInterface from "@/interfaces/ProjectInterface";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const ProjectCardPerso = () => {
@@ -9,6 +10,9 @@ const ProjectCardPerso = () => {
     const [persoProject, setPersoProject] = useState<ProjectInterface[]>([]);
     const [toggleModalProject, setToggleModalProject] = useState<boolean>(false);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+    
+    const selectedProject = persoProject.find(project => project.id === selectedProjectId);
+    const imageSrc = selectedProject?.images;
 
     const fetchProject = async () => {
         const personalResponse = await fetch('/data/PersonalProject.json');
@@ -41,7 +45,7 @@ const ProjectCardPerso = () => {
                             <div className="opacity-0  hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
                                 <FontAwesomeIcon icon={faEye} className="w-10 h-10 shrink-0 fill-neutral-50" />
                             </div>
-                            <img src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 "></img>
+                            <Image src={project.images} alt='photo-projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 " width={1920} height={880} />
                             <h3 className="my-3">{project.title}</h3>
                         </div>
                     ))
@@ -56,7 +60,7 @@ const ProjectCardPerso = () => {
                             </div>
                             <div className="w-custom  p-3 mx-auto">
                                 <a href={persoProject.find(project => project.id === selectedProjectId)?.link}>
-                                    <img className="rounded-md" src={persoProject.find(project => project.id === selectedProjectId)?.images}></img>
+                                    {imageSrc && (<Image className="rounded-md" src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
                                 </a>
                             </div>
                             <div className="flex flex-col  w-11/12 h-64 mx-auto justify-center items-center">

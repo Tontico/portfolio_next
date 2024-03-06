@@ -3,10 +3,15 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 const ProjectCardFormation = () => {
     const [formationProject, setFormationProject] = useState<ProjectInterface[]>([]);
     const [toggleModalProject, setToggleModalProject] = useState<boolean>(false);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+
+    const selectedProject = formationProject.find(project => project.id === selectedProjectId);
+    const imageSrc = selectedProject?.images;
+
 
     const fetchProject = async () => {
         const formationResponse = await fetch('/data/FormationProject.json');
@@ -40,7 +45,7 @@ const ProjectCardFormation = () => {
                             <div className="opacity-0 hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
                                 <FontAwesomeIcon icon={faEye} className="w-10 h-10 shrink-0 fill-neutral-50" />
                             </div>
-                            <img src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 "></img>
+                            <Image src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 " width={1920} height={880}/>
                             <h3 className="my-3">{project.title}</h3>
                         </div>
                     ))
@@ -55,7 +60,7 @@ const ProjectCardFormation = () => {
                             </div>
                             <div className="w-custom phone:w-11/12 mx-auto phone:mt-5">
                                 <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="phone:w-full phone:mx-auto">
-                                    <img className="rounded-md w-11/12 phone:w-full phone:h-52 mx-auto phone:mb-4" src={formationProject.find(project => project.id === selectedProjectId)?.images}></img>
+                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-52  phone:mb-4" src={imageSrc} alt="photo-projet" width={1920} height={880}/>)}
                                 </a>
                             </div>
                             <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0">

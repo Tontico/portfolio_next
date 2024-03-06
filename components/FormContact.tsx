@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 import axios from "axios";
+import Image from "next/image";
 
 
 const FormContact = () => {
@@ -63,13 +64,13 @@ const FormContact = () => {
                     {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}
                     <span className="dark:text-black text-sm text-white">* Obligatoire</span>
                     <div className="w-full my-2 flex gap-4 phone:flex-col">
-                        <input className=" w-1/2 phone:w-full  p-2 border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg" name="lastname" type="text" placeholder="Nom..." onChange={handleChange}></input>
-                        <input className=" p-2 w-1/2 phone:w-full border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg" name="firstname" type="text" placeholder="Prenom..." onChange={handleChange}></input>
+                        <input className=" w-1/2 border-customColor phone:w-full  p-2 border-2   rounded-md dark:text-customDarkBg" name="lastname" type="text" placeholder="Nom..." onChange={handleChange}></input>
+                        <input className=" p-2 w-1/2 border-customColor  phone:w-full border-2  rounded-md dark:text-customDarkBg" name="firstname" type="text" placeholder="Prenom..." onChange={handleChange}></input>
                     </div>
                     <div className="w-full my-2 flex gap-4 phone:flex-col">
-                        <input className=" w-1/2  phone:w-full  p-2 border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg" name="email" type="mail" placeholder="*Email..." required onChange={handleChange}></input>
+                        <input className=" w-1/2 border-customColor  phone:w-full  p-2 border-2  rounded-md dark:text-customDarkBg" name="email" type="mail" placeholder="*Email..." required onChange={handleChange}></input>
                         <input
-                            className="p-2 w-1/2 phone:w-full border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg"
+                            className="p-2 w-1/2  border-customColor  phone:w-full border-2  rounded-md dark:text-customDarkBg"
                             type="tel"
                             value={phoneNumber}
                             name="phone"
@@ -81,13 +82,13 @@ const FormContact = () => {
                             placeholder="Téléphone..."
                         />
                     </div>
-                    <input className="my-2 p-2 w-full border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg" name="subject" type="text" placeholder="*Objet de votre demande..." required onChange={handleChange}></input>
-                    <textarea className="my-2 p-2 w-full border-2 dark:border-customDarkBg border-white rounded-md dark:text-customDarkBg" name="message" placeholder="Votre Message..." onChange={handleChange}></textarea>
+                    <input className="my-2 p-2  border-customColor  w-full border-2 rounded-md dark:text-customDarkBg" name="subject" type="text" placeholder="*Objet de votre demande..." required onChange={handleChange}></input>
+                    <textarea className="my-2 p-2 border-customColor  w-full border-2  rounded-md dark:text-customDarkBg" name="message" placeholder="Votre Message..." onChange={handleChange}></textarea>
 
                     <button className="bg-customColor  rounded-full p-3 w-40  mx-auto text-white dark:text-customDarkBg absolute bottom-6 left-1/2 transform -translate-x-1/2">Soumettre</button>
                 </div>
             </form>
-            <img src='images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden"></img>
+            <Image src='/images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden" width={1592} height={1592}/>
         </>
     );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import Head from "next/head";
 
 
 export default function RootLayout({
@@ -9,12 +10,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet" />
         <title>SA | Mon portfolio</title>
-      </head>
+      </Head>
       <body className="">{children}</body>
     </html>
   );

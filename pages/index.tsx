@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 import FormContact from "@/components/FormContact";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -63,7 +64,7 @@ export default function Home() {
             }}
           >
             <div>
-              <img src="images/Img-portfolio.jpg" className="w-64 h-64 rounded-full border-2 border-customColor"></img>
+              <Image src="/images/Img-portfolio.jpg" className="w-64 h-64 rounded-full border-2 border-customColor" alt="img-portfolio" width={749} height={790} />
             </div>
           </motion.div>
 
@@ -122,7 +123,7 @@ export default function Home() {
                           <h3 className="text-2xl">Experience Professionnelles</h3>
                           <FontAwesomeIcon icon={faCode} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
-                            <strong>10/01/2024 - aujourd'hui</strong>
+                            <strong>10/01/2024 - aujourd\'hui</strong>
                             <h4>Alternant développeur Web fullStack - <em>WyTest Montpellier</em></h4>
                           </div>
                           <div className="w-full px-1">
@@ -177,7 +178,7 @@ export default function Home() {
                       duration: 1,
                       restDelta: 1,
                     }}>
-                    <img src="images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-11/12 phone:h-11/12"></img>
+                    <Image src="/images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-11/12 phone:h-11/12" width={1536} height={1536}/>
                   </motion.div>
                 </div>
                 <motion.div
