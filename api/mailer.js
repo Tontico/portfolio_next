@@ -15,8 +15,8 @@ app.post("/send-email", async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "antho.src34@gmail.com",
-      pass: "mtjq rsty osjt urjr",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
@@ -37,7 +37,7 @@ app.post("/send-email", async (req, res) => {
     res.status(500).send("Une erreur est survenue lors de l'envoi de l'e-mail");
   }
 });
-
-app.listen(3001, () => {
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
   console.log("Serveur backend en cours d'écoute sur le port 3001");
 });
