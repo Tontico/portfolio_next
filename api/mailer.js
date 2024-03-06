@@ -40,5 +40,5 @@ app.post("/mailer", async (req, res) => {
 });
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
-  console.log("Serveur backend en cours d'écoute sur le port 3001");
+  console.log("backend en cours d'écoute sur le port 3001");
 });
