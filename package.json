@@ -2,7 +2,6 @@
   "name": "portfolio_next",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,7 +25,8 @@
     "nodemailer": "^6.9.11",
     "react": "^18",
     "react-dom": "^18",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "vercel": "^33.5.3"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
