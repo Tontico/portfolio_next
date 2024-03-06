@@ -1,7 +1,9 @@
-  {
-    "functions": {
-      "api/mailer.js": {}
+{
+  "functions": {
+    "api/mailer.js": {
+      "runtime": "nodejs14.x"
     }
-
   }
+}
+
   
