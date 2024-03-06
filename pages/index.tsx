@@ -6,15 +6,20 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
+import FormContact from "@/components/FormContact";
 
 export default function Home() {
 
   const [aboutVisible, setAboutVisible] = useState<boolean>(false);
+  const [aboutContactVisible, setAboutContactVisible] = useState<boolean>(false);
 
   const toggleAboutSection = () => {
     setAboutVisible(!aboutVisible);
   }
 
+  const toggleAboutContactSection = () => {
+    setAboutContactVisible(!aboutContactVisible)
+  }
   const scrollIntoStart = () => {
     const headerId = document.getElementById('headerScrolled');
     if (headerId) {
@@ -96,7 +101,7 @@ export default function Home() {
         </section>
         {aboutVisible &&
           (
-            <section id="titleScrolled" className="mb-10">
+            <section id="titleScrolled" className="section-index mb-10">
               <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
               <div className="border border-customColor w-32 mx-auto"></div>
               <div className="flex flex-col items-center h-full">
@@ -187,7 +192,7 @@ export default function Home() {
                     restDelta: 1,
                   }}>
                   <button className="bg-customColor  rounded-full p-3 w-40"><Link href='/project'>Mes projets</Link></button>
-                  <button className="rounded-full p-3 w-40 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutSection}>Contactez moi !</button>
+                  <button className="rounded-full p-3 w-40 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutContactSection}>Contactez moi !</button>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 text-slate-500 transform rotate-180 hover:text-customColor transition-colors duration-300"
@@ -204,6 +209,13 @@ export default function Home() {
                 </motion.div>
               </div>
             </section>)}
+        {aboutContactVisible && (
+          <section className="section-index ">
+            <div className="h-full flex justify-center items-center">
+              <FormContact />
+            </div>
+          </section>
+        )}
       </main >
     </>
   );

@@ -20,7 +20,7 @@ const config: Config = {
         customText: ["Pridi", "sans"],
       },
       colors: {
-        customColor: "#ff7a13",
+        customColor: "#40B5AD",
         customDarkBg: "#1f2227",
         light: {
           primary: "#f8f8f8",
