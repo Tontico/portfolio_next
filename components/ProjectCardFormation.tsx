@@ -60,7 +60,7 @@ const ProjectCardFormation = () => {
                             </div>
                             <div className="w-custom phone:w-11/12 mx-auto phone:mt-5">
                                 <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="phone:w-full phone:mx-auto">
-                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-52  phone:mb-4" src={imageSrc} alt="photo-projet" width={1920} height={880}/>)}
+                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-52  phone:mb-4" src={imageSrc} alt="photo-projet"/>)}
                                 </a>
                             </div>
                             <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0">

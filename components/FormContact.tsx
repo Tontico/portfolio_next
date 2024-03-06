@@ -23,15 +23,16 @@ const FormContact = () => {
     });
     const [validatedLogs, setValidatedLogs] = useState<boolean>(false);
     const apiUrl = process.env.API_URL;
-    console.log(apiUrl);
+
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
         let formattedInput = input.replace(/(\d{2})(?=\d)/g, '$1 ');
         setPhoneNumber(formattedInput);
     };
 
-
-
+    const handleApi = () => {
+        console.log(apiUrl)
+    }
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -40,7 +41,8 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post(`${apiUrl}/send-email`, formData);
+            await axios.post(`https://nodejs-serverless-function-express-five-xi.vercel.app
+            /send-email`, formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',
@@ -58,7 +60,7 @@ const FormContact = () => {
     };
     return (
         <>
-            <form className=" relative h-5/6 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
+            <form className=" relative h-5/6 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit} onClick={handleApi}>
                 <div className=" w-11/12 h-full mx-auto p-5 mb-10 flex flex-col justify-center items-center ">
                     <h2 className="dark:text-black text-white text-center text-2xl mb-2 phone:m-0">Pour toute demande particulière !</h2>
                     {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}
@@ -88,7 +90,7 @@ const FormContact = () => {
                     <button className="bg-customColor  rounded-full p-3 w-40  mx-auto text-white dark:text-customDarkBg absolute bottom-6 left-1/2 transform -translate-x-1/2">Soumettre</button>
                 </div>
             </form>
-            <Image src='/images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden" width={1592} height={1592}/>
+            <Image src='/images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden" width={1592} height={1592} />
         </>
     );
 }
