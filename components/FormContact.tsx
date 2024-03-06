@@ -21,6 +21,8 @@ const FormContact = () => {
         message: '',
     });
     const [validatedLogs, setValidatedLogs] = useState<boolean>(false);
+    const apiUrl = process.env.API_URL;
+
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
         let formattedInput = input.replace(/(\d{2})(?=\d)/g, '$1 ');
@@ -37,7 +39,7 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post('https://nodejs-serverless-function-express-five-xi.vercel.app/send-email', formData);
+            await axios.post(`${apiUrl}/send-email`, formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',

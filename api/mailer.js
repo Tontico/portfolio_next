@@ -21,8 +21,8 @@ app.post("/send-email", async (req, res) => {
   });
 
   let mailOptions = {
-    from: "antho.src34@gmail.com",
-    to: "antho.src34@gmail.com",
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
     subject: subject,
     text: `Email: ${email} | numéro de téléphone: ${phone}\n
     Bonjour ${firstname} ${lastname}\n
