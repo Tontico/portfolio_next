@@ -53,7 +53,7 @@ const ProjectCardFormation = () => {
                 {toggleModalProject && selectedProjectId && (
                     <>
                         <div className="fixed phone:relative top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
-                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 phone:w-11/12 ">
+                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-dvh phone:w-11/12 ">
                             <div className="flex justify-center  items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl ms-10 phone:ms-2 ">{formationProject.find(project => project.id === selectedProjectId)?.title}: {formationProject.find(project => project.id === selectedProjectId)?.annee}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-5xl text-end me-5 cursor-pointer">&times;</span>
