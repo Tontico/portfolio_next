@@ -22,7 +22,7 @@ const FormContact = () => {
         message: '',
     });
     const [validatedLogs, setValidatedLogs] = useState<boolean>(false);
-
+    const apiUrl = process.env.API_URL;
 
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
@@ -30,10 +30,10 @@ const FormContact = () => {
         setPhoneNumber(formattedInput);
     };
 
-    const handleApi = () => {
-        const user = process.env.customKey;
-        console.log(user);
-    }
+    // const handleApi = () => {
+    //     const user = process.env.customKey;
+    //     console.log(user);
+    // }
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -42,7 +42,7 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:3001/mailer", formData);
+            await axios.post(`${apiUrl}`, formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',
@@ -60,7 +60,7 @@ const FormContact = () => {
     };
     return (
         <>
-            <form className=" relative h-5/6 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit} onClick={handleApi}>
+            <form className=" relative h-5/6 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
                 <div className=" w-11/12 h-full mx-auto p-5 mb-10 flex flex-col justify-center items-center ">
                     <h2 className="dark:text-black text-white text-center text-2xl mb-2 phone:m-0">Pour toute demande particulière !</h2>
                     {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}
