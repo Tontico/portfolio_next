@@ -42,7 +42,7 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post(`${apiUrl}/send-email`, formData);
+            await axios.post(`${apiUrl}`, formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',
