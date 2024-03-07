@@ -65,8 +65,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex  justify-center flex-col items-center" id="mainScrolled">
-        <section className=" section-index flex  w-full justify-center items-center phone:justify-start phone:mt-14 phone:flex-col gap-6">
+      <main className="flex justify-center flex-col items-center" id="mainScrolled">
+        <section className=" section-index   flex  w-full justify-center items-center phone:justify-start phone:mt-14 phone:flex-col gap-6">
           <motion.div
             initial={{ x: -400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -219,7 +219,7 @@ export default function Home() {
         {aboutContactVisible && (
           <section className="h-screen w-full phone:mt-4 ">
             <div className="h-full w-full relative flex flex-col justify-center items-center">
-              <div className="flex justify-center gap-4 items-center mb-3 phone:mb-5">
+              <div className="flex justify-center gap-4 items-center mb-3 phone:mb-3">
                 <h2 id="contactScrolled" className="text-4xl text-center " >Prenez contact</h2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +235,7 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="border  border-customColor w-32 mb-5  mx-auto"></div>
+              <div className="border  border-customColor w-32 mb-5 phone:m-0  mx-auto"></div>
               <FormContact />
             </div>
 
