@@ -14,6 +14,7 @@ const ProjectCardPerso = () => {
     const selectedProject = persoProject.find(project => project.id === selectedProjectId);
     const imageSrc = selectedProject?.images;
 
+    //catch json and display projects 
     const fetchProject = async () => {
         const personalResponse = await fetch('/data/PersonalProject.json');
         const personalData = await personalResponse.json();
@@ -31,7 +32,7 @@ const ProjectCardPerso = () => {
     const closeProject = () => {
         setToggleModalProject(false);
     }
-
+    //display project at the beginning 
     useEffect(() => {
         fetchProject();
     }, []);
@@ -64,12 +65,12 @@ const ProjectCardPerso = () => {
                                 </a>
                             </div>
                             <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0">
-                                <div className=" w-full h-44 phone:h-auto flex flex-col justify-start  items-center">
+                                <div className=" w-full h-40 phone:h-auto flex flex-col justify-start  items-center">
                                     <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
                                     <p className="  w-full phone:text-center">{persoProject.find(project => project.id === selectedProjectId)?.description}</p>
 
                                 </div>
-                                <div className="w-full h-44 phone:h-auto phone:my-5 flex-col   flex justify-start items-center">
+                                <div className="w-full h-40 phone:h-auto phone:my-5 flex-col   flex justify-start items-center">
                                     <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
                                     <div className="w-full mt-1 grid grid-cols-2  text-center gap-4 ">{persoProject.find(project => project.id === selectedProjectId)?.languages.map((langues, index) => (
                                         <span key={index} className="dark:bg-customColor dark:hover:bg-customColor dark:hover:text-white bg-slate-600 hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-11/12 mx-auto transition duration-200">{langues}</span>

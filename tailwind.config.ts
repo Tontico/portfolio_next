@@ -40,6 +40,7 @@ const config: Config = {
       height: {
         custom: "650px",
         contact: "500px",
+        exp: "248px"
       },
       width: {
         custom: "700px",

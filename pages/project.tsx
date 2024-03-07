@@ -12,10 +12,11 @@ export default function Projects() {
 
     const [isProjet, setIsProjet] = useState<boolean>(true);
 
+    //display formation project
     const toggleProjectFormation = () => {
         setIsProjet(true);
     };
-
+    //display personal project
     const toggleProjectPerso = () => {
         setIsProjet(false);
     };

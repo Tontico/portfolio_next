@@ -28,7 +28,10 @@ export default function Home() {
         headerId.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
       }, 300);
     }
+    setAboutContactVisible(false);
+    setAboutVisible(false);
   }
+
 
   useEffect(() => {
     if (aboutVisible && window.innerWidth >= 1024) {
@@ -47,11 +50,22 @@ export default function Home() {
       }
     }
   }, [aboutVisible])
+  useEffect(() => {
+    if (aboutContactVisible ) {
+      const section = document.getElementById('contactScrolled');
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }, 300);
+      }
+
+    }
+  }, [aboutContactVisible])
 
   return (
     <>
       <Header />
-      <main className="flex justify-center flex-col items-center" id="mainScrolled">
+      <main className="flex  justify-center flex-col items-center" id="mainScrolled">
         <section className=" section-index flex  w-full justify-center items-center phone:justify-start phone:mt-14 phone:flex-col gap-6">
           <motion.div
             initial={{ x: -400, opacity: 0 }}
@@ -94,19 +108,19 @@ export default function Home() {
                 restDelta: 1,
               }}>
               <div className="text-center flex gap-4 justify center items-center">
-                <button className="bg-customColor  rounded-full p-3 w-40"><a href="/cv/CV_Anthony_Suraci.pdf" className="text-white">Voir le CV</a></button>
-                <button className="rounded-full p-3 w-40 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutSection}>En savoir plus !</button>
+                <button className="bg-customColor  rounded-full p-4 w-44"><a href="/cv/CV_Anthony_Suraci.pdf" className="text-white">Voir le CV</a></button>
+                <button className="rounded-full p-4 w-44 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutSection}>En savoir plus !</button>
               </div>
             </motion.div>
           </div>
         </section>
         {aboutVisible &&
           (
-            <section id="titleScrolled" className="section-index mb-10">
-              <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
-              <div className="border border-customColor w-32 mx-auto"></div>
+            <section id="titleScrolled" className=" h-screen phone:h-auto p-5 mt-5">
               <div className="flex flex-col items-center h-full">
-                <div id="sectionScrolled" className="h-5/6 w-full gap-4 phone:flex-col  pt-5 flex justify-center items-start phone:h-full">
+                <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
+                <div className="border border-customColor w-32 mx-auto"></div>
+                <div id="sectionScrolled" className="h-4/5 w-full gap-4 phone:flex-col  mt-5 flex justify-center items-start phone:h-full">
                   <div className="flex flex-col w-3/5 phone:w-10/12 phone:mx-auto">
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -118,8 +132,8 @@ export default function Home() {
                         duration: 1,
                         restDelta: 1,
                       }}>
-                      <div className="flex items-center gap-4 justify-center h-80  phone:flex-col phone:justify-start phone:h-full">
-                        <div className="border-4 p-1 border-customColor flex flex-col items-center rounded-lg w-1/2 h-3/4 ml-5 phone:m-0 phone:w-full phone:h-full">
+                      <div className="flex items-center gap-4 justify-center h-72  phone:flex-col phone:justify-start phone:h-full">
+                        <div className="border-4 p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp   ml-5 phone:m-0 phone:w-full phone:h-full">
                           <h3 className="text-2xl">Experience Professionnelles</h3>
                           <FontAwesomeIcon icon={faCode} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
@@ -135,7 +149,7 @@ export default function Home() {
                             <h4>Contrat étudiant équipier polyvalent - <em>Lidl Mèze</em></h4>
                           </div>
                         </div>
-                        <div className="border-4  p-1 border-customColor flex flex-col items-center rounded-lg w-1/2 h-3/4 phone:w-full phone:h-full">
+                        <div className="border-4  p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-auto phone:w-full phone:h-full">
                           <h3 className="text-2xl">Diplomes et formations</h3>
                           <FontAwesomeIcon icon={faGraduationCap} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
@@ -154,7 +168,7 @@ export default function Home() {
                       </div>
                     </motion.div>
                     <motion.div
-                      className="w-full  ml-5 phone:my-3"
+                      className="w-full flex justify-center gap-2 phone:flex-col  phone:my-3"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{
@@ -164,7 +178,12 @@ export default function Home() {
                         duration: 1,
                         restDelta: 1,
                       }}>
-                      <p>Dans le domaine du nu</p>
+                      <p className="w-1/2 phone:w-full phone:m-0 p-2 ml-4 text-lg">En reconversion professionnelles depuis septembre 2023, je pave petit à petit la route qui me ménèra au metier de développeur web !<br></br>
+                        Savoir et plaisir sont au rendez-vous !
+                      </p>
+                      <p className="w-1/2 phone:w-full p-2 text-lg">
+                        Je suis aussi un arraché de sport et je pratique la force Athlétique depuis presque 3 ans. <br></br>Ne vous inquietez pas les épaules sont solides !
+                      </p>
                     </motion.div>
                   </div>
                   <motion.div
@@ -178,11 +197,11 @@ export default function Home() {
                       duration: 1,
                       restDelta: 1,
                     }}>
-                    <Image src="/images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-11/12 phone:h-11/12" width={1536} height={1536}/>
+                    <Image src="/images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-11/12 phone:h-11/12" width={1536} height={1536} />
                   </motion.div>
                 </div>
                 <motion.div
-                  className="text-center h-1/6  w-5/6 flex gap-4 justify-center items-center"
+                  className="text-center   w-5/6 flex gap-4 justify-center items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
@@ -192,29 +211,34 @@ export default function Home() {
                     duration: 1,
                     restDelta: 1,
                   }}>
-                  <button className="bg-customColor  rounded-full p-3 w-40"><Link href='/project'>Mes projets</Link></button>
-                  <button className="rounded-full p-3 w-40 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutContactSection}>Contactez moi !</button>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-slate-500 transform rotate-180 hover:text-customColor transition-colors duration-300"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    onClick={scrollIntoStart}
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 0a1 1 0 00-.707.293l-9 9a1 1 0 000 1.414l9 9a1 1 0 001.414-1.414L3.414 11H20a1 1 0 000-2H3.414l7.293-7.293A1 1 0 0010 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  <button className="bg-customColor  rounded-full p-4 w-44"><Link href='/project'>Mes projets</Link></button>
+                  <button className="rounded-full p-4 w-44 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutContactSection}>Contactez moi !</button>
                 </motion.div>
               </div>
             </section>)}
         {aboutContactVisible && (
-          <section className="section-index ">
-            <div className="h-full flex justify-center items-center">
+          <section className="h-screen w-full phone:mt-4 ">
+            <div className="h-full w-full relative flex flex-col justify-center items-center">
+              <div className="flex justify-center gap-4 items-center mb-3 phone:mb-5">
+                <h2 id="contactScrolled" className="text-4xl text-center " >Prenez contact</h2>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6  text-slate-500 transform rotate-180 hover:text-customColor transition-colors duration-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  onClick={scrollIntoStart}
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 0a1 1 0 00-.707.293l-9 9a1 1 0 000 1.414l9 9a1 1 0 001.414-1.414L3.414 11H20a1 1 0 000-2H3.414l7.293-7.293A1 1 0 0010 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="border  border-customColor w-32 mb-5  mx-auto"></div>
               <FormContact />
             </div>
+
           </section>
         )}
       </main >

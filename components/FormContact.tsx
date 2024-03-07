@@ -30,19 +30,21 @@ const FormContact = () => {
     const messageRef = useRef<HTMLTextAreaElement>(null);
     const apiUrl = process.env.API_URL;
 
+    // put spaces between numbers
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
         let formattedInput = input.replace(/(\d{2})(?=\d)/g, '$1 ');
         setPhoneNumber(formattedInput);
     };
 
-
+    //dynamic changes of input element
     const handleChange = (e: any) => {
         const { name, value } = e.target;
         const sanitizedInput = DOMPurify.sanitize(value);
         setFormData({ ...formData, [name]: sanitizedInput });
     };
 
+    //catch post api mailer, if true display logs and clear state
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -77,8 +79,8 @@ const FormContact = () => {
     };
     return (
         <>
-            <form className=" relative h-5/6 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
-                <div className=" w-11/12 h-full mx-auto p-5 mb-10 flex flex-col justify-center items-center ">
+            <form className=" relative h-3/4 phone:h-auto phone:mt-16 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
+                <div className=" w-11/12 h-full mx-auto p-5  flex flex-col justify-center items-center ">
                     <h2 className="dark:text-black text-white text-center text-2xl mb-2 phone:m-0">Pour toute demande particulière !</h2>
                     {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}
                     <span className="dark:text-black text-sm text-white">* Obligatoire</span>
@@ -136,7 +138,7 @@ const FormContact = () => {
                         placeholder="Votre Message..."
                         onChange={handleChange}
                         ref={messageRef}></textarea>
-                    <button className="bg-customColor  rounded-full p-3 w-40  mx-auto text-white dark:text-customDarkBg absolute bottom-6 left-1/2 transform -translate-x-1/2">Soumettre</button>
+                    <button className="bg-customColor  rounded-full p-4 w-44  mx-auto mt-5 text-white dark:text-customDarkBg">Soumettre</button>
                 </div>
             </form>
             <Image src='/images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden" width={1592} height={1592} />

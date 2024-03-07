@@ -12,21 +12,28 @@ const Header = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [width, setWidth] = useState<number>(0);
     const [openBurger, setOpenBurger] = useState<boolean>(false);
-    const logo = !darkMode ? "/images/logo-light.png" : "/images/logo-dark.png";
+    const [isInitialized, setIsInitialized] = useState<boolean>(false);
 
+    //enabled/disabled darkmode 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
     }
+    //enabled/disabled burger menu
     const toggleMenu = () => {
         setOpenBurger(!openBurger);
     };
-    useEffect(() => {
-        const darkModeCookies = Cookies.get('darkMode');
-        if (darkModeCookies === "enabled") {
-            setDarkMode(true);
-        }
 
-    }, [])
+
+    useEffect(() => {
+        if (!isInitialized) {
+            const darkModeStorage = localStorage.getItem('darkMode');
+            if (darkModeStorage === "enabled") {
+                setDarkMode(true);
+            }
+            setIsInitialized(true);
+        }
+    }, [isInitialized]);
+
     useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
@@ -42,20 +49,19 @@ const Header = () => {
     useEffect(() => {
         if (darkMode) {
             document.body.classList.add('dark');
-            Cookies.set('darkMode', 'enabled', { expires: 7 });
+            localStorage.setItem('darkMode', 'enabled');
         } else {
             document.body.classList.remove('dark');
-            Cookies.remove('darkMode');
+            localStorage.removeItem('darkMode');
         }
-
-    }, [darkMode])
+    }, [darkMode]);
 
 
     return (
         <>
             <header className="h-28 flex items-center text-xl" id="headerScrolled">
                 <nav className=" h-28 phone:relative flex items-center w-full">
-                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><Image src={logo} className="w-36 phone:mb-1 phone:w-24" alt="logo" width={2536} height={2536}/></Link>
+                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><Image src="/images/logo-v2.png" className="w-36 phone:mb-1 phone:w-24" alt="logo" width={2536} height={2536} /></Link>
                     {width >= 1024 && (<ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
                         <li className="mx-10"><Link href='/project'>Mes projets</Link></li>
