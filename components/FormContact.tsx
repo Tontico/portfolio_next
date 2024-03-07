@@ -11,7 +11,7 @@ import Image from "next/image";
 
 
 const FormContact = () => {
-
+  
     const [phoneNumber, setPhoneNumber] = useState('');
     const [formData, setFormData] = useState<object>({
         firstname: '',
@@ -22,7 +22,7 @@ const FormContact = () => {
         message: '',
     });
     const [validatedLogs, setValidatedLogs] = useState<boolean>(false);
-    const apiUrl = process.env.API_URL;
+
 
     const handlePhone = (e: any) => {
         let input = e.target.value.replace(/\D/g, '');
@@ -31,7 +31,8 @@ const FormContact = () => {
     };
 
     const handleApi = () => {
-        console.log(apiUrl)
+        const user = process.env.customKey;
+        console.log(user);
     }
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -41,7 +42,7 @@ const FormContact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await axios.post("https://sa-mon-portfolio.vercel.app/mailer", formData);
+            await axios.post("http://localhost:3001/mailer", formData);
             setValidatedLogs(true);
             setFormData({
                 firstname: '',
