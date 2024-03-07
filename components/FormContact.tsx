@@ -79,7 +79,7 @@ const FormContact = () => {
     };
     return (
         <>
-            <form className=" relative h-3/4 phone:h-auto phone:mt-5 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
+            <form className=" relative h-5/6 phone:h-auto phone:mt-5 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
                 <div className=" w-11/12 h-full mx-auto p-5  flex flex-col justify-center items-center ">
                     <h2 className="dark:text-black text-white text-center text-2xl mb-2 phone:m-0">Pour toute demande particulière !</h2>
                     {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}

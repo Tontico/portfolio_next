@@ -116,12 +116,12 @@ export default function Home() {
         </section>
         {aboutVisible &&
           (
-            <section id="titleScrolled" className=" h-screen phone:h-auto p-5 mt-5">
-              <div className="flex flex-col items-center h-full">
+            <section id="titleScrolled" className=" h-screen phone:h-auto mt-10 ">
+              <div className="flex flex-col items-center h-auto mt-10 w-full">
                 <h2 className="text-4xl text-center mb-3">A propos de moi</h2>
                 <div className="border border-customColor w-32 mx-auto"></div>
-                <div id="sectionScrolled" className="h-4/5 w-full gap-4 phone:flex-col  mt-5 flex justify-center items-start phone:h-full">
-                  <div className="flex flex-col w-3/5 phone:w-10/12 phone:mx-auto">
+                <div id="sectionScrolled" className="h-4/5 w-full gap-4 phone:flex-col  mt-10 flex justify-center items-start phone:h-full">
+                  <div className="flex flex-col w-3/5 phone:w-11/12 phone:mx-auto">
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -132,8 +132,8 @@ export default function Home() {
                         duration: 1,
                         restDelta: 1,
                       }}>
-                      <div className="flex items-center gap-4 justify-center h-72  phone:flex-col phone:justify-start phone:h-full">
-                        <div className="border-4 p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp   ml-5 phone:m-0 phone:w-full phone:h-full">
+                      <div className="flex items-center gap-4 justify-center h-72  phone:flex-col phone:justify-start phone:h-full phone:w-full">
+                        <div className="border-4 p-2 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp   ml-5   phone:m-0 phone:w-full phone:h-full">
                           <h3 className="text-2xl">Experience Professionnelles</h3>
                           <FontAwesomeIcon icon={faCode} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
@@ -149,7 +149,7 @@ export default function Home() {
                             <h4>Contrat étudiant équipier polyvalent - <em>Lidl Mèze</em></h4>
                           </div>
                         </div>
-                        <div className="border-4  p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp phone:w-full phone:h-full">
+                        <div className="border-4  p-2 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp phone:w-full phone:h-full">
                           <h3 className="text-2xl">Diplomes et formations</h3>
                           <FontAwesomeIcon icon={faGraduationCap} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
@@ -197,7 +197,7 @@ export default function Home() {
                       duration: 1,
                       restDelta: 1,
                     }}>
-                    <Image src="/images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-11/12 phone:h-11/12" width={1536} height={1536} />
+                    <Image src="/images/about-me.jpg" alt="about me img" className="rounded-lg h-11/12 w-11/12 phone:w-full phone" width={1536} height={1536} />
                   </motion.div>
                 </div>
                 <motion.div
@@ -217,8 +217,8 @@ export default function Home() {
               </div>
             </section>)}
         {aboutContactVisible && (
-          <section className="h-screen w-full phone:mt-4 ">
-            <div className="h-full w-full relative flex flex-col justify-center items-center">
+          <section className="h-screen phone:h-dvh  w-full phone:mt-10  ">
+            <div className="h-full w-full relative mt-10 flex flex-col justify-center items-center">
               <div className="flex justify-center gap-4 items-center mb-3 phone:mb-3">
                 <h2 id="contactScrolled" className="text-4xl text-center " >Prenez contact</h2>
                 <svg

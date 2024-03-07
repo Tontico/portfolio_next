@@ -54,14 +54,14 @@ const ProjectCardPerso = () => {
                 {toggleModalProject && selectedProjectId && (
                     <>
                         <div className="fixed top-0 left-0 w-full h-full bg-customBg" onClick={closeProject}></div>
-                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-svh phone:w-11/12">
+                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-lvh phone:w-11/12">
                             <div className="flex justify-center items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl px-5 ">{persoProject.find(project => project.id === selectedProjectId)?.title}: {persoProject.find(project => project.id === selectedProjectId)?.annee}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-4xl text-end me-5 cursor-pointer">&times;</span>
                             </div>
                             <div className="w-custom phone:w-full  p-3  phone:mt-5">
                                 <a href={persoProject.find(project => project.id === selectedProjectId)?.link}>
-                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-48  phone:mb-4" src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
+                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-auto " src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
                                 </a>
                             </div>
                             <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0">
