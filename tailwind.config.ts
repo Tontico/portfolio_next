@@ -35,17 +35,18 @@ const config: Config = {
         customBg: "rgba(0, 0, 0, 0.5)",
         customPr: "rgba(0, 0, 0, 0.8)",
         customDarkBg: "#1f2227",
+        customColor: "#40B5AD",
       },
       height: {
         custom: "650px",
-        contact: "500px"
+        contact: "500px",
       },
       width: {
         custom: "700px",
       },
     },
     screens: {
-      'phone': {'max': '1024px'}, // Appliquer seulement aux écrans dont la largeur est inférieure à 640px
+      phone: { max: "1024px" }, // Appliquer seulement aux écrans dont la largeur est inférieure à 640px
     },
   },
   plugins: [],

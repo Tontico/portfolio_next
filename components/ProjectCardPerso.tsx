@@ -10,7 +10,7 @@ const ProjectCardPerso = () => {
     const [persoProject, setPersoProject] = useState<ProjectInterface[]>([]);
     const [toggleModalProject, setToggleModalProject] = useState<boolean>(false);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
-    
+
     const selectedProject = persoProject.find(project => project.id === selectedProjectId);
     const imageSrc = selectedProject?.images;
 
@@ -53,34 +53,42 @@ const ProjectCardPerso = () => {
                 {toggleModalProject && selectedProjectId && (
                     <>
                         <div className="fixed top-0 left-0 w-full h-full bg-customBg" onClick={closeProject}></div>
-                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-100 dark:bg-customDarkBg h-custom phone:h-5/6 phone:w-11/12">
+                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 phone:w-11/12">
                             <div className="flex justify-center items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl px-5 ">{persoProject.find(project => project.id === selectedProjectId)?.title}: {persoProject.find(project => project.id === selectedProjectId)?.annee}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-4xl text-end me-5 cursor-pointer">&times;</span>
                             </div>
-                            <div className="w-custom  p-3 mx-auto">
+                            <div className="w-custom phone:w-full  p-3  phone:mt-5">
                                 <a href={persoProject.find(project => project.id === selectedProjectId)?.link}>
-                                    {imageSrc && (<Image className="rounded-md" src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
+                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-48  phone:mb-4" src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
                                 </a>
                             </div>
-                            <div className="flex flex-col  w-11/12 h-64 mx-auto justify-center items-center">
-                                <div className=" w-full flex justify-evenly items-center">
-                                    <h3 className=" mb-1 w-1/2 text-center text-xl">Descriptif du projet</h3>
-                                    <h3 className="mb-1 w-1/2 text-center text-xl">Languages Utilisés</h3>
+                            <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0">
+                                <div className=" w-full h-44 phone:h-auto flex flex-col justify-start  items-center">
+                                    <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
+                                    <p className="  w-full phone:text-center">{persoProject.find(project => project.id === selectedProjectId)?.description}</p>
+
                                 </div>
-                                <div className="w-full p-2 gap-4 mb-3    flex justify-center items-center">
-                                    <p className="w-1/2">{persoProject.find(project => project.id === selectedProjectId)?.description}</p>
-                                    <div className="w-1/2 grid grid-cols-2  text-center gap-4 ">{persoProject.find(project => project.id === selectedProjectId)?.languages.map((langues, index) => (
-                                        <span key={index} className="dark:bg-slate-500 dark:hover:bg-customColor dark:hover:text-white bg-slate-600 hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-11/12 mx-auto transition duration-200">{langues}</span>
+                                <div className="w-full h-44 phone:h-auto phone:my-5 flex-col   flex justify-start items-center">
+                                    <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
+                                    <div className="w-full mt-1 grid grid-cols-2  text-center gap-4 ">{persoProject.find(project => project.id === selectedProjectId)?.languages.map((langues, index) => (
+                                        <span key={index} className="dark:bg-customColor dark:hover:bg-customColor dark:hover:text-white bg-slate-600 hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-11/12 mx-auto transition duration-200">{langues}</span>
                                     ))}</div>
                                 </div>
-                                <a href={persoProject.find(project => project.id === selectedProjectId)?.link} className="group w-12 hover:w-48 h-12 relative mx-auto mt-1 text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black bg-white cursor-pointer rounded-full border-2 border-customColor dark:bg-customDarkBg  ">
-                                    <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
-                                    <span className="origin-left inline-flex text-base duration-100 ml-1  group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-black dark:border-l-white px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
-                                        En savoir plus !
-                                    </span>
-                                </a>
                             </div>
+                            <a href={persoProject.find(project => project.id === selectedProjectId)?.link} className="group w-12 bg-transparent phone:w-48 hover:w-48 h-12 relative mx-auto mt-1 text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black  cursor-pointer rounded-full border-2 border-customColor   phone:absolute phone:bottom-6 phone:left-1/2 phone:transform phone:-translate-x-1/2">
+                                <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
+                                {window.innerWidth <= 1024 ? (
+                                    <>
+                                        <span className="border-l-2 h-2/3 ml-2 dark:border-white border-slate-600"></span>
+                                        <span className="w-full ml-2 text-slate-600 dark:text-white ">En savoir plus</span>
+                                    </>
+                                ) :
+                                    (<span className="origin-left inline-flex text-base duration-100 ml-1  group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-black dark:border-l-white px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                                        En savoir plus !
+                                    </span>)
+                                }
+                            </a>
                         </div>
                     </>
                 )}

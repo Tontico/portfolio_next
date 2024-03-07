@@ -93,7 +93,7 @@ const Header = () => {
                 >
                     <li className="my-20"><Link href='/'>Accueil</Link></li>
                     <li className="mb-20"><Link href='/project'>Mes projets</Link></li>
-                    <li className="mb-20">Contacts</li>
+                    <li className="mb-20"><Link href='/contact'>Contacts</Link></li>
                 </motion.ul>
             )}
         </>
