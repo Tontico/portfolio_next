@@ -149,7 +149,7 @@ export default function Home() {
                             <h4>Contrat étudiant équipier polyvalent - <em>Lidl Mèze</em></h4>
                           </div>
                         </div>
-                        <div className="border-4  p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-auto phone:w-full phone:h-full">
+                        <div className="border-4  p-1 border-customColor flex flex-col items-center rounded-lg w-2/3 h-exp phone:w-full phone:h-full">
                           <h3 className="text-2xl">Diplomes et formations</h3>
                           <FontAwesomeIcon icon={faGraduationCap} className="text-customColor w-7 h-7" />
                           <div className="w-full mt-1 px-1">
