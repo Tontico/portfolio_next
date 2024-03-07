@@ -65,8 +65,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex justify-center phone:h-dvh flex-col items-center" id="mainScrolled">
-        <section className=" section-index   flex  w-full justify-center items-center phone:justify-start phone:mt-14 phone:flex-col gap-6">
+      <main className="flex justify-center  flex-col items-center" id="mainScrolled">
+        <section className=" section-index phone:h-dvh  flex  w-full justify-center items-center phone:justify-start phone:mt-14 phone:flex-col gap-6">
           <motion.div
             initial={{ x: -400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
