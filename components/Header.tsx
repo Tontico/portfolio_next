@@ -14,6 +14,8 @@ const Header = () => {
     const [openBurger, setOpenBurger] = useState<boolean>(false);
     const [isInitialized, setIsInitialized] = useState<boolean>(false);
 
+    const logo = !darkMode ? "/images/logo-dark.png" : "/images/logo-light.png";
+    
     //enabled/disabled darkmode 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -61,7 +63,7 @@ const Header = () => {
         <>
             <header className="h-28 flex items-center text-xl" id="headerScrolled">
                 <nav className=" h-28 phone:relative flex items-center w-full">
-                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><Image src="/images/logo-v2.png" className="w-36 phone:mb-1 phone:w-24" alt="logo" width={2536} height={2536} /></Link>
+                    <Link href="/" className="w-1/3 flex justify-center phone:justify-start items-center"><Image src={logo} className="w-36 phone:mb-1 phone:w-24" alt="logo" width={2048} height={2048} /></Link>
                     {width >= 1024 && (<ul className="flex justify-evenly h-full items-center w-1/3">
                         <li className=""><Link href='/'>Accueil</Link></li>
                         <li className="mx-10"><Link href='/project'>Mes projets</Link></li>

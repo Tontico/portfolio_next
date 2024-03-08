@@ -59,7 +59,7 @@ const ProjectCardPerso = () => {
                                 <h2 className="w-5/6 text-start text-2xl px-5 ">{persoProject.find(project => project.id === selectedProjectId)?.title}: {persoProject.find(project => project.id === selectedProjectId)?.annee}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-4xl text-end me-5 cursor-pointer">&times;</span>
                             </div>
-                            <div className="w-custom phone:w-full  p-3  phone:mt-5">
+                            <div className="w-custom phone:w-full  p-3 mx-auto">
                                 <a href={persoProject.find(project => project.id === selectedProjectId)?.link}>
                                     {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-auto " src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
                                 </a>
