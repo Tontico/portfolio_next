@@ -5,8 +5,13 @@
     "images": "/images/perso/mailer.png",
     "languages": ["Vercel", "JavaSript"],
     "annee": "Mars 2024",
-    "estimatedTime":"2 jours",
-    "description": "Creation à l'aide de Verrcel d'un serveur express API pour le fonctionnement du mailer de mon portfolio",
+    "estimatedTime": "2 jours",
+    "description": [
+      "Création d'une fonction Express sans serveur sur Vercel",
+      "Utilisation d'une requête POST pour l'envoi du courriel",
+      "Apprentissage de nodemailer et du transporteur Gmail",
+      "Personnalisation du courriel envoyé"
+      ],
     "link": ""
   },
   {
@@ -15,8 +20,16 @@
     "images": "/images/perso/portfolioNext.png",
     "languages": ["Next.Js", "TypeScript", "Tailwind"],
     "annee": "Mars 2024",
-    "estimatedTime":"2 semaines",
-    "description": "Conception d'une deuxieme version de mon portfolio en Next.js et tailwind coté applicatif, utilisation du router de Next ainsi que de framer motion ",
+    "estimatedTime": "2 semaines",
+    "description": [
+      "Conception d'une deuxième version de mon portfolio",
+      "Utilisation de Next.js et TypeScript",
+      "Gestion du design avec Tailwind CSS",
+      "Utilisation de différents hooks de React (useState, useRef, useEffect)",
+      "Utilisation de Framer Motion pour les animations",
+      "Mise en place d'un mode sombre avec Tailwind CSS et utilisation du localStorage pour le conserver en mémoire",
+      "Utilisation de fetch pour accéder à des données JSON"
+      ],
     "link": ""
   },
   {
@@ -25,8 +38,14 @@
     "images": "/images/perso/portfolio-v1.png",
     "languages": ["HTML", "CSS", "bootstrap", "Javascript"],
     "annee": "Novembre 2023",
-    "estimatedTime":"2 semaines",
-    "description": "Conception d'un CV single page responsive en HTML/Boostrap et JavaScript",
+    "estimatedTime": "2 semaines",
+    "description": [
+      "Conception d'un CV single page responsive",
+      "Développement en HTML et CSS",
+      "Initiation à Bootstrap 5.3",
+      "Utilisation de JavaScript (carrousel, animations de révélation)",
+      "Déploiement en ligne avec GitHub"
+      ],
     "link": "https://github.com/Tontico/Portfolio-AnthonySuraci"
   },
   {
@@ -35,8 +54,13 @@
     "images": "/images/perso/slideshow.png",
     "languages": ["Javascript", "CSS"],
     "annee": "Octobre 2023",
-    "estimatedTime":"1 jour",
-    "description": "Conception d'un caroussel en JavaScript orienté objet, design en css",
+    "estimatedTime": "1 jour",
+    "description": [
+      "Initiation à la conception d'un carrousel automatique",
+      "Développement en JavaScript orienté objet",
+      "Manipulation du DOM et utilisation de setTimeout",
+      "Design en CSS natif"
+      ],
     "link": "https://github.com/Tontico/Diginamic-2023/tree/main/JavaScript/JS_Avanc%C3%A9e/javascript/Exo%20JS%20Avanc%C3%A9e%20Carrousel"
   },
   {
@@ -45,18 +69,26 @@
     "images": "/images/perso/todolist.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Octobre 2023",
-    "estimatedTime":"1 jour",
-    "description": "Conception d'une todolist en JavaScript, manipulation du DOM",
+    "estimatedTime": "1 jour",
+    "description": [
+      "Conception d'une liste de tâches dynamique",
+      "Développement en HTML/CSS/JavaScript vanilla",
+      "Manipulation du DOM"
+      ],
     "link": "https://github.com/Tontico/JS-Project/tree/main/To-do-list"
   },
   {
-    "id":6,
+    "id": 6,
     "title": "CalculatorJs",
     "images": "/images/perso/calculator.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Octobre 2023",
-    "estimatedTime":"1 jour",
-    "description": "Conception d'une calculatrice en JavaScript, manipulation du DOM",
+    "estimatedTime": "1 jour",
+    "description": [
+      "Conception d'une calculatrice dynamique",
+      "Développement en HTML/CSS/JavaScript vanilla",
+      "Manipulation du DOM"
+      ],
     "link": "https://github.com/Tontico/JS-Project/tree/main/Calculator "
   },
   {
@@ -65,8 +97,13 @@
     "images": "/images/perso/first-homepage.png",
     "languages": ["HTML", "CSS"],
     "annee": "Mai 2022",
-    "estimatedTime":"4 jours",
-    "description": "HomePage de mon premier projet personnels, site web portant sur les disciplines de la musculation et gestionnaire de programmes sportifs personalisable",
+    "estimatedTime": "4 jours",
+    "description": [
+      "Conception d'une page d'accueil personnelle",
+      "Développement en HTML/CSS natif",
+      "Première initiation au CSS",
+      "Utilisation des concepts Flexbox et Grid ainsi que des pseudo-classes"
+      ],
     "link": "https://github.com/Tontico/Code-perso/tree/main/Tuto/Home"
   }
 ]

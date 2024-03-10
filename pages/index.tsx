@@ -51,7 +51,7 @@ export default function Home() {
     }
   }, [aboutVisible])
   useEffect(() => {
-    if (aboutContactVisible ) {
+    if (aboutContactVisible) {
       const section = document.getElementById('contactScrolled');
       if (section) {
         setTimeout(() => {
@@ -178,11 +178,12 @@ export default function Home() {
                         duration: 1,
                         restDelta: 1,
                       }}>
-                      <p className="w-1/2 phone:w-full phone:m-0 p-2 ml-4 text-lg">En reconversion professionnelles depuis septembre 2023, je pave petit à petit la route qui me ménèra au metier de développeur web !<br></br>
+                      <p className="w-1/2 phone:w-full phone:m-0 p-2 ml-4 text-lg">En reconversion professionnelle depuis septembre 2023, je trace petit à petit la route qui me mènera au métier de développeur web !<br></br>
                         Savoir et plaisir sont au rendez-vous !
                       </p>
                       <p className="w-1/2 phone:w-full p-2 text-lg">
-                        Je suis aussi un arraché de sport et je pratique la force Athlétique depuis presque 3 ans. <br></br>Ne vous inquietez pas les épaules sont solides !
+                        Je suis également un passionné de sport et je pratique la force athlétique depuis près de 3 ans.
+                        <br></br>Ne vous inquiétez pas, mes épaules sont solides !
                       </p>
                     </motion.div>
                   </div>

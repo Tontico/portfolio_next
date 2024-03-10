@@ -40,6 +40,7 @@ const config: Config = {
       height: {
         custom: "650px",
         contact: "500px",
+        modal:"90%",
         exp: "248px"
       },
       width: {
@@ -47,7 +48,8 @@ const config: Config = {
       },
     },
     screens: {
-      phone: { max: "1024px" }, // Appliquer seulement aux écrans dont la largeur est inférieure à 640px
+    
+      phone: { max: "1024px" }, 
     },
   },
   plugins: [],

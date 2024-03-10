@@ -42,7 +42,6 @@ p {
 }
 #__next {
   width: 100%;
-  
 }
 .section-index {
   height: calc(100vh - 112px);
@@ -69,7 +68,7 @@ p {
   bottom: 0;
   width: 40px;
   height: 18px;
-  background-color: #40B5AD;
+  background-color: #40b5ad;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
@@ -108,4 +107,24 @@ input:checked + .slider:before {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@media  (max-height: 700px) {
+  .media-height{
+    height:300px;
+  }
+  .media-queries {
+    height: 100px ;
+
+  }
+  .media-queries-two {
+    height: 100% ;
+  }
+  .media-queries-three{
+    height: 120px;
+  }
+  .media-modal{
+    height: 90% !important;
+  }
+ 
 }
