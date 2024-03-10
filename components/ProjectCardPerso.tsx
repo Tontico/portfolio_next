@@ -98,15 +98,14 @@ const ProjectCardPerso = () => {
                                 <div className="w-full mx-auto mt-5">
                                     <div className="flex justify-center items-center mb-5">
                                         <FontAwesomeIcon icon={faArrowLeft} className=" h-6 ml-5 mr-auto cursor-pointer" onClick={closeDescription} />
-                                        <h2 className=" text-xl w-2/3 pl-5 phone:p-0 phone:mr-9 text-customColor">Description du projet</h2>
+                                        <h2 className=" text-xl w-2/3 pl-5 phone:p-0 phone:mr-10 text-customColor">Description du projet</h2>
                                     </div>
                                     <div className="w-11/12 mx-auto flex phone:flex-col justify-center items-center ">
                                         <h4 className="w-1/2 text-center phone:w-full mx-auto phone:mb-2 "> Date de réalisation : <strong>{persoProject.find(project => project.id === selectedProjectId)?.annee}</strong> </h4>
                                         <h4 className="w-1/2 mx-auto text-center phone:w-full"> Durée de réalisation : <strong>{persoProject.find(project => project.id === selectedProjectId)?.estimatedTime}</strong> </h4>
                                     </div>
                                     {selectedProject ? (
-                                        <ul className={`w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto phone:h-${selectedProject.description.length < 6 ? '32' : '72'} text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal`}>
-                                            {selectedProject?.description.map((description, index) => (
+                                        <ul className={selectedProject.description.length < 6 ? "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto  text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal" : "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto phone:h-64 text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal"}>                                            {selectedProject?.description.map((description, index) => (
                                                 <li key={index} className="w-full phone mb-2">
                                                     {description}
                                                 </li>
