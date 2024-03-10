@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { faEye, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import "../styles/globals.css";
+import { motion } from "framer-motion";
+
 const ProjectCardFormation = () => {
 
     const [formationProject, setFormationProject] = useState<ProjectInterface[]>([]);
@@ -51,20 +53,47 @@ const ProjectCardFormation = () => {
             <div className="grid grid-cols-3 phone:grid-cols-1 w-full h-full gap-6">
                 {
                     formationProject.map((project) => (
-                        <div key={project.id} className="flex cursor-pointer relative  p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 hover:border-none hover:p-0" onClick={() => toggleProject(project.id)}>
+                        <motion.div key={project.id}
+                            className="flex cursor-pointer relative  p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 hover:border-none hover:p-0" onClick={() => toggleProject(project.id)}
+                            initial={{
+                                opacity: 0
+                            }}
+                            animate={{
+                                opacity: 1
+                            }}
+                            transition={{
+                                delay: 0.2,
+                                ease: "easeInOut",
+                                duration: 1
+                            }}>
                             <div className="opacity-0 hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
                                 <FontAwesomeIcon icon={faEye} className="w-10 h-10 shrink-0 fill-neutral-50" />
                             </div>
                             <Image src={project.images} alt='photo projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 " width={1920} height={880} />
                             <h3 className="my-3">{project.title}</h3>
-                        </div>
+                        </motion.div>
                     ))
                 }
                 {toggleModalProject && selectedProjectId && (
                     <>
                         <div className="fixed phone:relative top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
-                        <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 media-modal phone:w-11/12 ">
-                            <div className="flex justify-center  items-center mt-5 ">
+                        <motion.div key={selectedProjectId}
+                            className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 media-modal phone:w-11/12"
+                            initial={{
+                                height: 0,
+                                opacity: 0
+                            }}
+                            animate={{
+                                height: window.innerWidth >= 1024 ? "650px" : "83.33%",
+                                opacity: 1
+                            }}
+                            transition={{
+                                type: "tween", 
+                                stiffness: 10, 
+                                duration: 1
+                            }}
+                        >
+                            <div className="flex justify-center items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl ms-10 phone:ms-2 ">{formationProject.find(project => project.id === selectedProjectId)?.title}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-5xl text-end me-5 cursor-pointer">&times;</span>
                             </div>
@@ -135,7 +164,7 @@ const ProjectCardFormation = () => {
                                     </a>
                                 </div>)
                             }
-                        </div>
+                        </motion.div>
                     </>
                 )}
             </div>

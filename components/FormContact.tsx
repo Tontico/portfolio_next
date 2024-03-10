@@ -82,7 +82,25 @@ const FormContact = () => {
             <form className=" relative h-5/6 phone:h-auto phone:mt-5 w-1/2 phone:w-11/12 dark:bg-white bg-customDarkBg rounded-md mx-auto flex flex-col justify-center " onSubmit={handleSubmit}>
                 <div className=" w-11/12 h-full mx-auto p-5  flex flex-col justify-center items-center ">
                     <h2 className="dark:text-black text-white text-center text-2xl mb-2 phone:m-0">Pour toute demande particulière !</h2>
-                    {validatedLogs && (<span className="bg-lime-500 w-full p-2 rounded-md dark:text-black text-white text-center mb-2">Message envoyé avec succès !</span>)}
+                    {validatedLogs && (<motion.div
+                        className="bg-customColor w-full p-2 rounded-md text-white text-white text-center mb-2"
+                        initial={{
+                            width: 0,
+                            opacity: 0
+                        }} 
+                        animate={{
+                            width: "100%",
+                            opacity: 1
+                        }} 
+                        transition={{
+                            type: "spring",
+                            stiffness: 50, 
+                            damping: 15, 
+                            duration: 1.5,
+                        }}
+                    >
+                        Message envoyé avec succès !
+                    </motion.div>)}
                     <span className="dark:text-black text-sm text-white">* Obligatoire</span>
                     <div className="w-full my-2 flex gap-4 phone:flex-col">
                         <input
@@ -105,7 +123,7 @@ const FormContact = () => {
                         <input
                             className=" w-1/2 border-customColor  phone:w-full  p-2 border-2  rounded-md dark:text-customDarkBg"
                             name="email"
-                            type="mail"
+                            type="email"
                             placeholder="*Email..."
                             required
                             onChange={handleChange}
@@ -113,10 +131,11 @@ const FormContact = () => {
                         <input
                             className="p-2 w-1/2  border-customColor  phone:w-full border-2  rounded-md dark:text-customDarkBg"
                             type="tel"
-
+                            pattern="[0-9]*"
+                            title="Seuls les chiffres sont autorisés"
                             ref={phoneRef}
                             name="phone"
-                            maxLength={14}
+                            maxLength={10}
                             onChange={(e) => {
                                 handlePhone(e);
                                 handleChange(e);
@@ -138,7 +157,7 @@ const FormContact = () => {
                         placeholder="Votre Message..."
                         onChange={handleChange}
                         ref={messageRef}></textarea>
-                    <button className="bg-customColor  rounded-full p-4 w-44  mx-auto mt-5 text-white dark:text-customDarkBg">Soumettre</button>
+                    <button className="bg-customColor  rounded-full p-4 w-44  mx-auto mt-5 text-white ">Soumettre</button>
                 </div>
             </form>
             <Image src='/images/sticker.png' alt="photo-contact" className="w-80 absolute top-44 right-44 transform translate-x-1/2 translate-y-1/2 phone:hidden" width={1592} height={1592} />

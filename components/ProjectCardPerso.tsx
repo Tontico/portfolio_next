@@ -4,6 +4,7 @@ import { faArrowLeft, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const ProjectCardPerso = () => {
 
@@ -49,13 +50,24 @@ const ProjectCardPerso = () => {
             <div className="grid grid-cols-3 phone:grid-cols-1 w-full h-full gap-6">
                 {
                     persoProject.map((project) => (
-                        <div key={project.id} className="flex relative cursor-pointer p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 hover:border-none hover:p-0" onClick={() => toggleProject(project.id)}>
+                        <motion.div key={project.id} className="flex relative cursor-pointer p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 hover:border-none hover:p-0" onClick={() => toggleProject(project.id)}
+                            initial={{
+                                opacity: 0
+                            }}
+                            animate={{
+                                opacity: 1
+                            }}
+                            transition={{
+                                delay: 0.2,
+                                ease: "easeInOut", 
+                                duration: 1
+                            }}>
                             <div className="opacity-0  hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
                                 <FontAwesomeIcon icon={faEye} className="w-10 h-10 shrink-0 fill-neutral-50" />
                             </div>
                             <Image src={project.images} alt='photo-projet' className="h-full border-b-2 border-slate-600 dark:border-slate-500 " width={1920} height={880} />
                             <h3 className="my-3">{project.title}</h3>
-                        </div>
+                        </motion.div>
                     ))
                 }
                 {toggleModalProject && selectedProjectId && (
@@ -106,11 +118,11 @@ const ProjectCardPerso = () => {
                                     </div>
                                     {selectedProject ? (
                                         <ul className={selectedProject.description.length < 6 ? "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto  text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal" : "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto phone:h-64 text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal"}>                                            {selectedProject?.description.map((description, index) => (
-                                                <li key={index} className="w-full phone mb-2">
-                                                    {description}
-                                                </li>
-                                            ))
-                                            }
+                                            <li key={index} className="w-full phone mb-2">
+                                                {description}
+                                            </li>
+                                        ))
+                                        }
                                         </ul>) : null}
                                 </div>
                             </div>}
