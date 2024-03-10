@@ -5,8 +5,17 @@
     "images": "/images/formation/wygame.png",
     "languages": ["React", "PHP"],
     "annee": "Jan - Mars 2024",
-    "description": "Conception d'un jeu vidéo doodleJump like en React coté applicatif et utilisation pluggins Wordpress en PHP pour la liaison avec la base de données",
-    "link": "https://github.com/Tontico/Wytest-Jump-Game"
+    "estimatedTime": "1 mois et demi",
+    "description": [
+      "Conception d'un jeu vidéo inspiré de Doodle Jump",
+      "Utilisation de ReactJS côté client (Node.js version 20.1)",
+      "Utilisation de WordPress côté serveur (plugins PHP version 7.4.16)",
+      "Intégration de react-router pour l'architecture du site",
+      "Sécurisation des routes URL ainsi que des différentes saisies utilisateur",
+      "Mise en place d'une réinitialisation de mot de passe avec JWT",
+      "Conception intégrale du design en CSS avec utilisation de key-frames"
+    ],
+    "link": ""
   },
   {
     "id": 2,
@@ -14,8 +23,16 @@
     "images": "/images/formation/digivivre.png",
     "languages": ["React", "TypeScript"],
     "annee": "Janvier 2024",
-    "description": "Conception d'une page en React TypeScript de vente de jouets de musique, utilisation d'un serveur json et des differentes requetes CRUD",
-    "link": "https://github.com/Tontico/Les-Maestros"
+    "estimatedTime": "1 semaine",
+    "description": [
+      "Conception individuelle d'une page de vente de jouets musicaux en React avec TypeScript",
+      "Utilisation d'un serveur et de fichiers JSON",
+      "Implémentation d'un fetcher avec gestion des promesses",
+      "Création d'un CRUD en React avec TypeScript (Node.js version 18.18)",
+      "Utilisation de différents hooks React tels que useState et useEffect",
+      "Intégration de Bootstrap pour le design"
+    ],
+    "link": ""
   },
   {
     "id": 3,
@@ -23,7 +40,20 @@
     "images": "/images/formation/symfony.png",
     "languages": ["Symfony", "HTML", "CSS", "Javascript"],
     "annee": "Dec 2023 - Jan 2024",
-    "description": "Conception d'un site e commerce de vente d'instruments de musique sous Symfony en équipe de 3, gestion de différents controller et création du design",
+    "estimatedTime": "2 semaines",
+    "description": [
+      "Conception en équipe de 3 d'un site e-commerce de vente d'instruments de musique",
+      "Création de la base de données et intégration avec Doctrine",
+      "Utilisation de makeAuth de Symfony",
+      "Création de 2 pare-feux (firewalls) : administrateur/utilisateur",
+      "Conception de différents contrôleurs, SymfonyForm et templates Twig",
+      "Élaboration de différentes requêtes DQL et SQL",
+      "Analyse syntaxique d'un fichier CSV comportant toutes les villes de France pour remplir la base de données",
+      "Utilisation de JavaScript pour préremplir les champs de saisie",
+      "Gestion du design en CSS côté utilisateur et avec Bootstrap côté administrateur",
+      "Conception d'un système de panier, de commande et d'un parcours de vente vers le paiement",
+      "Développement d'un devis de commande au format PDF à l'aide du package DOMpdf"
+    ],
     "link": "https://github.com/Tontico/Les-Maestros"
   },
   {
@@ -32,7 +62,15 @@
     "images": "/images/formation/prestashop-module.png",
     "languages": ["Symfony", "Prestashop", "PHP", "CSS"],
     "annee": "Decembre 2023",
-    "description": "Conception d'un site e commerce de vente de complément alimentaire avec Prestashop et création d'un module personalisable back et front office representant un popUp de 3 promotions choisis",
+    "estimatedTime": "1 semaines",
+    "description": [
+      "Conception d'un site e-commerce de vente de compléments alimentaires",
+      "Utilisation de PrestaShop 8.1",
+      "Design et gestion des différents modules intégrés à PrestaShop",
+      "Création d'un module personnalisable en back et front office représentant une fenêtre contextuelle avec 3 promotions sélectionnées",
+      "Utilisation de Symfony (Smarty) et SQL pour le développement du module",
+      "Utilisation de cookies pour l'affichage de la fenêtre contextuelle"
+    ],
     "link": "https://github.com/Tontico/PopUp-module-Prestashop "
   },
   {
@@ -41,7 +79,14 @@
     "images": "/images/formation/php-projet.png",
     "languages": ["PHP", "HTML", "CSS", "Javascript"],
     "annee": "Novembre 2023",
-    "description": "Conception d'un site de gestion de projets en PHP programmation orienté objet, modèle MVC, en équipe de 3",
+    "estimatedTime": "1 semaine et demi",
+    "description": [
+      "Conception en équipe de 3 d'un site de gestion de projets",
+      "Développement en PHP version 8.1 orienté objet",
+      "Création de la base de données",
+      "Mise en place d'un modèle MVC et d'un micro-framework",
+      "Conception d'un système CRUD (classes Model)"
+    ],
     "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
   },
   {
@@ -50,7 +95,14 @@
     "images": "/images/formation/lvf.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Octobre 2023",
-    "description": "Conception d'une vitrine par groupe de 4 à la demande d'un 'client', création d'un cahier des charges, maquettages et conception du site, utilisation de leaflet pour afficher une carte ainsi que des pins",
+    "estimatedTime": "1 semaine",
+    "description": [
+      "Conception d'un site vitrine par groupe de 4 à la demande d'un 'client'",
+      "Élaboration d'un cahier des charges, de maquettes et conception du site sur Figma",
+      "Gestion de l'intégration en CSS natif",
+      "Utilisation de la bibliothèque Leaflet pour afficher une carte",
+      "Utilisation de JavaScript pour diverses fonctionnalités (header, menu burger, footer, carousel)"
+    ],
     "link": "https://github.com/Tontico/Projet1-Diginamic"
   },
   {
@@ -59,7 +111,14 @@
     "images": "/images/formation/first-php-mvc.png",
     "languages": ["PHP", "bootstrap"],
     "annee": "Octobre 2023",
-    "description": "Apprentissage de php impératif, modèle mvc, gestion login/logout ainsi que upload de fichier et sécurisation de routes",
+    "estimatedTime": "5 jours",
+    "description": [
+      "Apprentissage impératif de PHP version 8.1",
+      "Maîtrise du modèle MVC",
+      "Création d'un noyau de connexion et gestion de sessions",
+      "Gestion des connexions/déconnexions, téléchargement de fichiers et sécurisation des routes URL ainsi que l'échappement des caractères",
+      "Création de bases de données et apprentissage de SQL"
+    ],
     "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
   },
   {
@@ -68,7 +127,13 @@
     "images": "/images/formation/first-project.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Aout 2023",
-    "description": "Conception d'un petit site cv à la demande de l'école pour connaitre mon niveau de pré-rentrée, utilisation de Javascript pour carousel ainsi que quelques animations mineures",
+    "estimatedTime": "1 semaine et demi",
+    "description": [
+      "Conception d'un site de CV à la demande de l'école",
+      "Évaluation de mon niveau de prérentrée",
+      "Utilisation de HTML et CSS",
+      "Intégration d'un carrousel en JavaScript"
+    ],
     "link": "https://github.com/Tontico/Code-perso"
   },
   {
@@ -76,8 +141,15 @@
     "title": "TournamentL2",
     "images": "/images/formation/gestionTournoi.png",
     "languages": ["HTML", "bootstrap", "PHP"],
-    "annee": "Mars 2021 - Mai 2021",
-    "description": "Conception d'un site de gestion de tournoi à 3 en php impératif, utilisation de sql et de phpMyAdmin, possibilité de connexion, création d'équipes, de tournois",
+    "annee": "Avril 2021 - Mai 2021",
+    "estimatedTime": "1 mois",
+    "description": [
+      "Conception d'un site de gestion de tournois par équipes de 4 membres",
+      "Élaboration du modèle conceptuel des données",
+      "Utilisation de SQL et de phpMyAdmin",
+      "Permet l'inscription/connexion, la création d'équipes et de tournois",
+      "Gestion des sessions et des différentes requêtes CRUD (Create, Read, Update, Delete)"
+    ],
     "link": "https://github.com/Tontico/Tournament-PHP-"
   }
 ]

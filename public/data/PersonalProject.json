@@ -5,6 +5,7 @@
     "images": "/images/perso/mailer.png",
     "languages": ["Vercel", "JavaSript"],
     "annee": "Mars 2024",
+    "estimatedTime":"2 jours",
     "description": "Creation à l'aide de Verrcel d'un serveur express API pour le fonctionnement du mailer de mon portfolio",
     "link": ""
   },
@@ -14,6 +15,7 @@
     "images": "/images/perso/portfolioNext.png",
     "languages": ["Next.Js", "TypeScript", "Tailwind"],
     "annee": "Mars 2024",
+    "estimatedTime":"2 semaines",
     "description": "Conception d'une deuxieme version de mon portfolio en Next.js et tailwind coté applicatif, utilisation du router de Next ainsi que de framer motion ",
     "link": ""
   },
@@ -23,6 +25,7 @@
     "images": "/images/perso/portfolio-v1.png",
     "languages": ["HTML", "CSS", "bootstrap", "Javascript"],
     "annee": "Novembre 2023",
+    "estimatedTime":"2 semaines",
     "description": "Conception d'un CV single page responsive en HTML/Boostrap et JavaScript",
     "link": "https://github.com/Tontico/Portfolio-AnthonySuraci"
   },
@@ -32,6 +35,7 @@
     "images": "/images/perso/slideshow.png",
     "languages": ["Javascript", "CSS"],
     "annee": "Octobre 2023",
+    "estimatedTime":"1 jour",
     "description": "Conception d'un caroussel en JavaScript orienté objet, design en css",
     "link": "https://github.com/Tontico/Diginamic-2023/tree/main/JavaScript/JS_Avanc%C3%A9e/javascript/Exo%20JS%20Avanc%C3%A9e%20Carrousel"
   },
@@ -41,6 +45,7 @@
     "images": "/images/perso/todolist.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Octobre 2023",
+    "estimatedTime":"1 jour",
     "description": "Conception d'une todolist en JavaScript, manipulation du DOM",
     "link": "https://github.com/Tontico/JS-Project/tree/main/To-do-list"
   },
@@ -50,6 +55,7 @@
     "images": "/images/perso/calculator.png",
     "languages": ["HTML", "CSS", "Javascript"],
     "annee": "Octobre 2023",
+    "estimatedTime":"1 jour",
     "description": "Conception d'une calculatrice en JavaScript, manipulation du DOM",
     "link": "https://github.com/Tontico/JS-Project/tree/main/Calculator "
   },
@@ -59,6 +65,7 @@
     "images": "/images/perso/first-homepage.png",
     "languages": ["HTML", "CSS"],
     "annee": "Mai 2022",
+    "estimatedTime":"4 jours",
     "description": "HomePage de mon premier projet personnels, site web portant sur les disciplines de la musculation et gestionnaire de programmes sportifs personalisable",
     "link": "https://github.com/Tontico/Code-perso/tree/main/Tuto/Home"
   }

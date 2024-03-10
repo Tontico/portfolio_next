@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 const ProjectCardFormation = () => {
+
     const [formationProject, setFormationProject] = useState<ProjectInterface[]>([]);
     const [toggleModalProject, setToggleModalProject] = useState<boolean>(false);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+    const [descriptionProject, setDescriptionProject] = useState<boolean>(false);
 
     const selectedProject = formationProject.find(project => project.id === selectedProjectId);
     const imageSrc = selectedProject?.images;
-
 
     const fetchProject = async () => {
         const formationResponse = await fetch('/data/FormationProject.json');
@@ -30,10 +31,16 @@ const ProjectCardFormation = () => {
 
     const closeProject = () => {
         setToggleModalProject(false);
+        setDescriptionProject(false);
+    }
+
+    const toggleDescription = () => {
+        setDescriptionProject(!descriptionProject);
     }
 
     useEffect(() => {
         fetchProject();
+
     }, []);
 
     return (
@@ -55,28 +62,49 @@ const ProjectCardFormation = () => {
                         <div className="fixed phone:relative top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
                         <div key={selectedProjectId} className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-dvh phone:w-11/12 ">
                             <div className="flex justify-center  items-center mt-5 ">
-                                <h2 className="w-5/6 text-start text-2xl ms-10 phone:ms-2 ">{formationProject.find(project => project.id === selectedProjectId)?.title}: {formationProject.find(project => project.id === selectedProjectId)?.annee}</h2>
+                                <h2 className="w-5/6 text-start text-2xl ms-10 phone:ms-2 ">{formationProject.find(project => project.id === selectedProjectId)?.title}</h2>
                                 <span onClick={closeProject} className="w-1/6 text-5xl text-end me-5 cursor-pointer">&times;</span>
                             </div>
-                            <div className="w-custom phone:w-full mx-auto p-3">
-                                <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="phone:w-full phone:mx-auto">
-                                    {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-auto " src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
-                                </a>
-                            </div>
-                            <div className="flex h-auto mt-5 w-11/12 h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0 phone:p-1">
-                                <div className=" w-full h-40 phone:h-auto flex flex-col justify-start  items-center">
-                                    <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
-                                    <p className="  w-full phone:text-center">{formationProject.find(project => project.id === selectedProjectId)?.description}</p>
-
-                                </div>
-                                <div className="w-full h-40 phone:h-auto phone:p-1 flex-col   flex justify-start items-center">
-                                    <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
-                                    <div className="w-full mt-1 grid grid-cols-2  text-center gap-4 ">{formationProject.find(project => project.id === selectedProjectId)?.languages.map((langues, index) => (
-                                        <span key={index} className="bg-customColor dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor  text-white cursor-pointer rounded-md p-2 w-11/12 mx-auto transition duration-200">{langues}</span>
-                                    ))}</div>
-                                </div>
-                            </div>
-                            <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="group w-12 phone:w-48 hover:w-48 h-12 relative bg-transparent mx-auto  text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black  cursor-pointer rounded-full border-2 border-customColor   phone:absolute phone:bottom-6 phone:left-1/2 phone:transform phone:-translate-x-1/2">
+                            {!descriptionProject ? (
+                                <>
+                                    <div className="w-custom phone:w-full mx-auto p-3">
+                                        <a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="phone:w-full phone:mx-auto">
+                                            {imageSrc && (<Image className="rounded-md w-full phone:w-full phone:h-auto " src={imageSrc} alt="photo-projet" width={1920} height={880} />)}
+                                        </a>
+                                    </div>
+                                    <div className="flex h-auto  w-full h-64 phone:h-auto mx-auto justify-center items-center phone:flex-col phone:mt-0 phone:p-1">
+                                        <div className=" w-full relative p-2 h-40 phone:h-auto flex flex-col justify-start  items-center">
+                                            <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
+                                            <div className="absolute inset-0 flex justify-center items-center ">
+                                                <button className="bg-slate-500 dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor  text-white cursor-pointer rounded-md p-3 w-2/5 mx-auto transition duration-200" onClick={toggleDescription}>Voir plus</button>
+                                            </div>
+                                        </div>
+                                        <div className="w-full h-40 p-2 phone:h-auto phone:p-1 flex-col flex justify-start items-center">
+                                            <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
+                                            {selectedProject ? (
+                                                <div className={`w-${selectedProject.languages.length < 3 ? '2/5' : 'full'} mt-1 grid grid-cols-${selectedProject.languages.length < 3 ? '1' : '2'} text-center gap-4`}>
+                                                    {selectedProject.languages.map((language, index) => (
+                                                        <span key={index} className="bg-customColor dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor text-white cursor-pointer rounded-md p-3 w-11/12 mx-auto transition duration-200">
+                                                            {language}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </>
+                            ) : <div className="w-custom phone:w-full ">
+                                <h2 className="text-center text-xl mb-1">Description du projet</h2>
+                                <ul className="w-11/12 mx-auto text-sm leading-7 tracking-wide">
+                                    {selectedProject?.description.map((description, index) => (
+                                        <li key={index} className="w-full">
+                                            {description}
+                                        </li>
+                                    ))
+                                    }
+                                </ul>
+                            </div>}
+                            {formationProject.find(project => project.id === selectedProjectId)?.link !== "" && (<a href={formationProject.find(project => project.id === selectedProjectId)?.link} className="group w-12 mt-2 phone:w-48 hover:w-48 h-12 relative bg-transparent mx-auto  text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex items-center text-black  cursor-pointer rounded-full border-2 border-customColor   phone:absolute phone:bottom-6 phone:left-1/2 phone:transform phone:-translate-x-1/2">
                                 <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
                                 {window.innerWidth <= 1024 ? (
                                     <>
@@ -88,7 +116,8 @@ const ProjectCardFormation = () => {
                                         En savoir plus !
                                     </span>)
                                 }
-                            </a>
+                            </a>)
+                            }
                         </div>
                     </>
                 )}

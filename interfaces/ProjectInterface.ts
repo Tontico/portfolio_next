@@ -4,6 +4,7 @@ export default interface ProjectInterface {
   images: string;
   languages: [];
   annee: string;
-  description: string;
+  estimatedTime:string;
+  description: [];
   link: string;
 }
