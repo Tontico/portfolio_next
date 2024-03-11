@@ -50,16 +50,24 @@ const ProjectCardPerso = () => {
             <div className="grid grid-cols-3 phone:grid-cols-1 w-full h-full gap-6">
                 {
                     persoProject.map((project) => (
-                        <motion.div key={project.id} className="flex relative cursor-pointer p-1 transition-all hover:scale-105 justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 hover:border-none hover:p-0" onClick={() => toggleProject(project.id)}
+                        <motion.div key={project.id} className="flex cursor-pointer relative  p-1  justify-center h-full items-center flex-col border-2 border-slate-600 dark:border-slate-500 " onClick={() => toggleProject(project.id)}
                             initial={{
                                 opacity: 0
                             }}
                             animate={{
                                 opacity: 1
                             }}
+                            whileHover={{
+                                scale: 1.05,
+                                border: "none",
+                                padding: "0",
+                                transition: {
+                                    stiffness: 50,
+                                }
+                            }}
                             transition={{
-                                type: "tween",
-                                stiffness: 20,
+                                ease: "easeInOut",
+                                stiffness: 50,
                                 duration: 0.5
                             }}>
                             <div className="opacity-0  hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
@@ -74,7 +82,7 @@ const ProjectCardPerso = () => {
                     <>
                         <div className="fixed phone:relative top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
                         <motion.div key={selectedProjectId}
-                            className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 media-modal phone:w-11/12"
+                            className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  text-white dark:text-customDarkBg bg-neutral-800 dark:bg-gray-100 h-custom phone:h-5/6 media-modal phone:w-11/12"
                             initial={{
                                 opacity: 0
                             }}
@@ -83,8 +91,8 @@ const ProjectCardPerso = () => {
                             }}
                             transition={{
                                 type: "tween",
-                                stiffness: 10,
-                                duration: 1
+                                stiffness: 50,
+                                duration: 0.3
                             }}>
                             <div className="flex justify-center  items-center mt-5 ">
                                 <h2 className="w-5/6 text-start text-2xl ms-10 phone:ms-2 ">{persoProject.find(project => project.id === selectedProjectId)?.title}</h2>
@@ -156,11 +164,11 @@ const ProjectCardPerso = () => {
                                         <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
                                         {window.innerWidth <= 1024 ? (
                                             <>
-                                                <span className="border-l-2 h-2/3 ml-2 dark:border-white border-slate-600"></span>
-                                                <span className="w-full ml-2 text-slate-600 dark:text-white ">En savoir plus</span>
+                                               <span className="border-l-2 h-2/3 ml-2 border-gray-100 dark:border-customDarkBg"></span>
+                                                <span className="w-full ml-2 text-slate-600 text-white dark:text-customDarkBg">En savoir plus</span>
                                             </>
                                         ) :
-                                            (<span className="origin-left inline-flex text-base duration-100 ml-1  text-black dark:text-white group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-black dark:border-l-white px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
+                                            (<span className="origin-left inline-flex text-base duration-100 ml-1  dark:text-customDarkBg text-white group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 border-l-gray-100 dark:border-l-customDarkBg px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
                                                 En savoir plus !
                                             </span>)
                                         }
