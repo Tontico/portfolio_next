@@ -62,9 +62,9 @@ const ProjectCardFormation = () => {
                                 opacity: 1
                             }}
                             transition={{
-                                delay: 0.2,
-                                ease: "easeInOut",
-                                duration: 1
+                                type: "tween",
+                                stiffness: 20,
+                                duration: 0.5
                             }}>
                             <div className="opacity-0 hover:opacity-100 absolute inset-0 flex flex-cols items-center justify-center transition-opacity text-white bg-customPr p-2 transition-opacity duration-300 ease-in-out">
                                 <FontAwesomeIcon icon={faEye} className="w-10 h-10 shrink-0 fill-neutral-50" />
@@ -80,17 +80,15 @@ const ProjectCardFormation = () => {
                         <motion.div key={selectedProjectId}
                             className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  bg-gray-200 dark:bg-neutral-800 h-custom phone:h-5/6 media-modal phone:w-11/12"
                             initial={{
-                                height: 0,
                                 opacity: 0
                             }}
                             animate={{
-                                height: window.innerWidth >= 1024 ? "650px" : "83.33%",
                                 opacity: 1
                             }}
                             transition={{
-                                type: "tween", 
-                                stiffness: 10, 
-                                duration: 1
+                                type: "tween",
+                                stiffness: 20,
+                                duration: 0.5
                             }}
                         >
                             <div className="flex justify-center items-center mt-5 ">
@@ -105,15 +103,15 @@ const ProjectCardFormation = () => {
                                         </a>
                                     </div>
                                     <div className="flex h-auto  w-full h-64 mx-auto justify-center items-center phone:flex-col phone:mt-0 phone:p-1">
-                                        <div className=" w-full media-queries relative p-2 h- flex flex-col justify-start  items-center">
+                                        <div className=" w-full media-queries relative p-3 h-40 flex flex-col justify-start  items-center">
                                             <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
                                             <button className="bg-slate-500 dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor  text-white cursor-pointer rounded-md p-3 w-2/5 mx-auto transition duration-200" onClick={toggleDescription}>Voir plus</button>
 
                                         </div>
-                                        <div className="w-full h-40 p-2 media-queries-two phone:p-1 flex-col flex justify-start items-center">
+                                        <div className="w-full h-40 p-3 media-queries-two phone:p-1 flex-col flex justify-start items-center">
                                             <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
                                             {selectedProject ? (
-                                                <div className={selectedProject.languages.length <= 3 ?
+                                                <div className={selectedProject.languages.length < 3 ?
                                                     "w-2/5 mt-1 media-queries-three grid phone:h-full grid-cols-1  text-center gap-4" : "w-full mt-1 media-queries-three grid phone:h-full grid-cols-2  text-center gap-4"} >
                                                     {selectedProject.languages.map((language, index) => (
                                                         <span key={index} className="bg-customColor w-full dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor text-white  rounded-md p-3 phone:w-11/12 mx-auto transition duration-200">
@@ -125,7 +123,18 @@ const ProjectCardFormation = () => {
                                         </div>
                                     </div>
                                 </>
-                            ) : <div className="w-custom phone:w-full">
+                            ) : <motion.div className="w-custom phone:w-full"
+                                initial={{
+                                    opacity: 0
+                                }}
+                                animate={{
+                                    opacity: 1
+                                }}
+                                transition={{
+                                    type: "tween",
+                                    stiffness: 20,
+                                    duration: 0.5
+                                }} >
                                 <div className="w-full mx-auto mt-5">
                                     <div className="flex justify-center items-center mb-5">
                                         <FontAwesomeIcon icon={faArrowLeft} className=" h-6 ml-5 mr-auto cursor-pointer" onClick={closeDescription} />
@@ -145,7 +154,7 @@ const ProjectCardFormation = () => {
                                             }
                                         </ul>) : null}
                                 </div>
-                            </div>}
+                            </motion.div>}
 
                             {formationProject.find(project => project.id === selectedProjectId)?.link !== "" && (
                                 <div className="flex justify-center items-center mt-5 media-button">

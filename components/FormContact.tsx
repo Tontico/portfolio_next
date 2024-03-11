@@ -87,19 +87,30 @@ const FormContact = () => {
                         initial={{
                             width: 0,
                             opacity: 0
-                        }} 
+                        }}
                         animate={{
                             width: "100%",
                             opacity: 1
-                        }} 
+                        }}
                         transition={{
                             type: "spring",
-                            stiffness: 50, 
-                            damping: 15, 
+                            stiffness: 50,
+                            damping: 15,
                             duration: 1.5,
                         }}
                     >
-                        Message envoyé avec succès !
+                        <motion.p
+                            initial={{
+                                opacity: 0
+                            }}
+                            animate={{
+                                opacity: 1
+                            }}
+                            transition={{
+                                delay: 0.2,
+                                type: "tween",
+                                duration: 1,
+                            }}>Message envoyé avec succès !</motion.p>
                     </motion.div>)}
                     <span className="dark:text-black text-sm text-white">* Obligatoire</span>
                     <div className="w-full my-2 flex gap-4 phone:flex-col">
