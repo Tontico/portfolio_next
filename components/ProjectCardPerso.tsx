@@ -164,7 +164,7 @@ const ProjectCardPerso = () => {
                                         <FontAwesomeIcon icon={faGithub} className="w-8 h-8 ml-1.5 shrink-0 fill-neutral-50 text-customColor" />
                                         {window.innerWidth <= 1024 ? (
                                             <>
-                                               <span className="border-l-2 h-2/3 ml-2 border-gray-100 dark:border-customDarkBg"></span>
+                                                <span className="border-l-2 h-2/3 ml-2 border-gray-100 dark:border-customDarkBg"></span>
                                                 <span className="w-full ml-2 text-slate-600 text-white dark:text-customDarkBg">En savoir plus</span>
                                             </>
                                         ) :
