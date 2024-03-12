@@ -82,7 +82,7 @@ const ProjectCardPerso = () => {
                     <>
                         <div className="fixed phone:relative top-0 left-0 w-full h-full overflow-auto bg-customBg" onClick={closeProject}></div>
                         <motion.div key={selectedProjectId}
-                            className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  text-white dark:text-customDarkBg bg-neutral-800 dark:bg-gray-100 h-custom phone:h-5/6 media-modal phone:w-11/12"
+                            className="fixed top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2  rounded-md shadow-lg z-50  text-white dark:text-customDarkBg bg-neutral-800 dark:bg-gray-100 h-custom phone:h-modal media-modal phone:w-11/12"
                             initial={{
                                 opacity: 0
                             }}

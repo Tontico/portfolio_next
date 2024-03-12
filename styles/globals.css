@@ -109,13 +109,12 @@ input:checked + .slider:before {
   }
 }
 
-@media  (max-height: 700px) {
+@media  (max-height: 750px) {
   .media-height{
     height:300px;
   }
   .media-queries {
-    height: 100px ;
-
+    height: 100px;
   }
   .media-queries-two {
     height: 100% ;
@@ -124,7 +123,7 @@ input:checked + .slider:before {
     height: 120px;
   }
   .media-modal{
-    height: 90% !important;
+    height: 640px !important;
   }
  
 }
