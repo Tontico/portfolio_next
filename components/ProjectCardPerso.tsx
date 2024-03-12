@@ -115,7 +115,7 @@ const ProjectCardPerso = () => {
                                             <h3 className="mb-2 w-full text-center text-xl">Languages Utilisés</h3>
                                             {selectedProject ? (
                                                 <div className={selectedProject.languages.length < 3 ?
-                                                    "w-2/5 mt-1 media-queries-three grid phone:h-full grid-cols-1  text-center gap-4" : "w-full mt-1 media-queries-three grid phone:h-full grid-cols-2  text-center gap-4"}>
+                                                    "w-2/5 mt-1 media-queries-three grid  grid-cols-1  text-center gap-4" : "w-full mt-1 media-queries-three grid  grid-cols-2  text-center gap-4"}>
                                                     {selectedProject.languages.map((language, index) => (
                                                         <span key={index} className="bg-customColor w-full dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor text-white  rounded-md p-3 phone:w-11/12 mx-auto transition duration-200">
                                                             {language}

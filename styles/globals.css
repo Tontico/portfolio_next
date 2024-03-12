@@ -109,7 +109,7 @@ input:checked + .slider:before {
   }
 }
 
-@media  (max-height: 750px) {
+@media  (max-height: 700px) {
   .media-height{
     height:300px;
   }
