@@ -143,7 +143,7 @@ const ProjectCardFormation = () => {
                                     stiffness: 20,
                                     duration: 0.5
                                 }} >
-                                <div className="w-full mx-auto mt-5">
+                                <div className="w-full mx-auto  h-full mt-5">
                                     <div className="flex justify-center items-center mb-5">
                                         <FontAwesomeIcon icon={faArrowLeft} className=" h-6 ml-5 mr-auto cursor-pointer" onClick={closeDescription} />
                                         <h2 className=" text-xl w-2/3 pl-5 phone:p-0 phone:mr-10 text-customColor">Description du projet</h2>
