@@ -111,7 +111,7 @@ const ProjectCardFormation = () => {
                                         </a>
                                     </div>
                                     <div className="flex h-auto  w-full h-64 mx-auto justify-center items-center phone:flex-col phone:mt-0 phone:p-1">
-                                        <div className=" w-full media-queries relative p-3 h-40 flex flex-col justify-start  items-center">
+                                        <div className=" w-full  h-40 media-queries relative p-3  flex flex-col justify-start  items-center">
                                             <h3 className=" w-full mb-2 w-1/2 text-center text-xl">Descriptif du projet</h3>
                                             <button className="bg-slate-500 dark:hover:bg-customColor dark:hover:text-white hover:bg-customColor  text-white cursor-pointer rounded-md p-3 w-2/5 mx-auto transition duration-200" onClick={toggleDescription}>Voir plus</button>
 
