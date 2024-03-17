@@ -17,25 +17,9 @@
     ],
     "link": ""
   },
+
   {
     "id": 2,
-    "title": "TP React TypeScript",
-    "images": "/images/formation/digivivre.png",
-    "languages": ["React", "TypeScript"],
-    "annee": "Janvier 2024",
-    "estimatedTime": "1 semaine",
-    "description": [
-      "Conception individuelle d'une page de vente de jouets musicaux en React avec TypeScript",
-      "Utilisation d'un serveur et de fichiers JSON",
-      "Implémentation d'un fetcher avec gestion des promesses",
-      "Création d'un CRUD en React avec TypeScript (Node.js version 18.18)",
-      "Utilisation de différents hooks React tels que useState et useEffect",
-      "Intégration de Bootstrap pour le design"
-    ],
-    "link": ""
-  },
-  {
-    "id": 3,
     "title": "Les maestros de la Symphony",
     "images": "/images/formation/symfony.png",
     "languages": ["Symfony", "HTML", "CSS", "Javascript"],
@@ -57,7 +41,7 @@
     "link": "https://github.com/Tontico/Les-Maestros"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "Digi'Complément",
     "images": "/images/formation/prestashop-module.png",
     "languages": ["Symfony", "Prestashop", "PHP", "CSS"],
@@ -74,7 +58,7 @@
     "link": "https://github.com/Tontico/PopUp-module-Prestashop "
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "TODO PHP PROJECT",
     "images": "/images/formation/php-projet.png",
     "languages": ["PHP", "HTML", "CSS", "Javascript"],
@@ -90,7 +74,7 @@
     "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Le Vélomobile Français LVF",
     "images": "/images/formation/lvf.png",
     "languages": ["HTML", "CSS", "Javascript"],
@@ -105,24 +89,9 @@
     ],
     "link": "https://github.com/Tontico/Projet1-Diginamic"
   },
+
   {
-    "id": 7,
-    "title": "Modèle mvc php impératif",
-    "images": "/images/formation/first-php-mvc.png",
-    "languages": ["PHP", "bootstrap"],
-    "annee": "Octobre 2023",
-    "estimatedTime": "5 jours",
-    "description": [
-      "Apprentissage impératif de PHP version 8.1",
-      "Maîtrise du modèle MVC",
-      "Création d'un noyau de connexion et gestion de sessions",
-      "Gestion des connexions/déconnexions, téléchargement de fichiers et sécurisation des routes URL ainsi que l'échappement des caractères",
-      "Création de bases de données et apprentissage de SQL"
-    ],
-    "link": "https://github.com/Tontico/TODO-PHP_PROJECT"
-  },
-  {
-    "id": 8,
+    "id": 6,
     "title": "Premier projet Diginamic",
     "images": "/images/formation/first-project.png",
     "languages": ["HTML", "CSS", "Javascript"],
@@ -135,21 +104,5 @@
       "Intégration d'un carrousel en JavaScript"
     ],
     "link": "https://github.com/Tontico/Code-perso"
-  },
-  {
-    "id": 9,
-    "title": "TournamentL2",
-    "images": "/images/formation/gestionTournoi.png",
-    "languages": ["HTML", "bootstrap", "PHP"],
-    "annee": "Avril 2021 - Mai 2021",
-    "estimatedTime": "1 mois",
-    "description": [
-      "Conception d'un site de gestion de tournois par équipes de 4 membres",
-      "Élaboration du modèle conceptuel des données",
-      "Utilisation de SQL et de phpMyAdmin",
-      "Permet l'inscription/connexion, la création d'équipes et de tournois",
-      "Gestion des sessions et des différentes requêtes CRUD (Create, Read, Update, Delete)"
-    ],
-    "link": "https://github.com/Tontico/Tournament-PHP-"
   }
 ]

@@ -14,7 +14,7 @@ const Header = () => {
     const [openBurger, setOpenBurger] = useState<boolean>(false);
     const [isInitialized, setIsInitialized] = useState<boolean>(false);
 
-    
+
     //enabled/disabled darkmode 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -69,19 +69,24 @@ const Header = () => {
                         <li className=""><Link href='/contact'>Contact</Link></li>
                     </ul>)}
                     <div className="w-1/3 phone:w-2/4 flex justify-center phone:justify-center items-center mt-2 phone:m-0 phone:absolute phone:top-1/2 phone:left-1/2 phone:transform phone:-translate-x-1/2 phone:-translate-y-1/2">
-                        <a href="https://github.com/Tontico" className="group w-12  hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
+                        {width >= 1024 ? (<><a href="https://github.com/Tontico" className="group w-12  hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
                             <FontAwesomeIcon icon={faGithub} className="w-8 h-8  shrink-0 fill-neutral-50" />
                             <span className="origin-left inline-flex text-base duration-100 ml-1 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all">
                                 Tontico
                             </span>
 
                         </a>
-                        <a href="https://www.linkedin.com/in/anthony-suraci/" className="group mx-5 w-12 hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
-                            <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 shrink-0 fill-neutral-50" />
-                            <span
-                                className="origin-left inline-flex w-full text-base duration-100 ml-1 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all whitespace-nowrap overflow-hidden"
-                            >Anthony Suraci</span>
-                        </a>
+                            <a href="https://www.linkedin.com/in/anthony-suraci/" className="group mx-5 w-12 hover:w-44 h-12 hover:bg-customColor relative bg-customColor rounded-full text-neutral-50 duration-700 before:duration-700 before:hover:500 font-bold flex justify-start items-center p-2">
+                                <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 shrink-0 fill-neutral-50" />
+                                <span
+                                    className="origin-left inline-flex w-full text-base duration-100 ml-1 group-hover:duration-300 group-hover:delay-500 opacity-0 group-hover:opacity-100 border-l-2 px-1 transform scale-x-0 group-hover:scale-x-100 transition-all whitespace-nowrap overflow-hidden"
+                                >Anthony Suraci</span>
+                            </a></>) : (<><a href="https://github.com/Tontico" className="group w-12 h-12  relative bg-customColor rounded-full text-neutral-50 duration-700  font-bold flex justify-start items-center p-2">
+                                <FontAwesomeIcon icon={faGithub} className="w-8 h-8  shrink-0 fill-neutral-50" />
+                            </a>
+                                <a href="https://www.linkedin.com/in/anthony-suraci/" className="group mx-5 w-12  h-12  relative bg-customColor rounded-full text-neutral-50 duration-700 font-bold flex justify-start items-center p-2">
+                                    <FontAwesomeIcon icon={faLinkedin} className="w-8 h-8 shrink-0 fill-neutral-50" />
+                                </a></>)}
                         <SwitchTheme darkMode={darkMode} toggleTheme={toggleDarkMode} />
                     </div>
 

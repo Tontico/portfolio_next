@@ -90,20 +90,6 @@
       "Manipulation du DOM"
       ],
     "link": "https://github.com/Tontico/JS-Project/tree/main/Calculator "
-  },
-  {
-    "id": 7,
-    "title": "First Homepage",
-    "images": "/images/perso/first-homepage.png",
-    "languages": ["HTML", "CSS"],
-    "annee": "Mai 2022",
-    "estimatedTime": "4 jours",
-    "description": [
-      "Conception d'une page d'accueil personnelle",
-      "Développement en HTML/CSS natif",
-      "Première initiation au CSS",
-      "Utilisation des concepts Flexbox et Grid ainsi que des pseudo-classes"
-      ],
-    "link": "https://github.com/Tontico/Code-perso/tree/main/Tuto/Home"
   }
+
 ]
