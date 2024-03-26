@@ -108,7 +108,7 @@ export default function Home() {
                 restDelta: 1,
               }}>
               <div className="text-center flex gap-4 justify center items-center">
-                <button className="bg-customColor  rounded-full p-4 w-44"><a href="/cv/CV_Anthony_Suraci.pdf" className="text-white">Voir le CV</a></button>
+                <button className="bg-customColor  rounded-full p-4 w-44"><a href="/cv/CV_Anthony_Suraci.pdf" className="text-white" download>Voir le CV</a></button>
                 <button className="rounded-full p-4 w-44 bg-slate-600 dark:bg-slate-500 text-white" onClick={toggleAboutSection}>En savoir plus !</button>
               </div>
             </motion.div>
