@@ -148,7 +148,7 @@ const ProjectCardPerso = () => {
                                         <h4 className="w-1/2 mx-auto text-center phone:w-full"> Durée de réalisation : <strong>{persoProject.find(project => project.id === selectedProjectId)?.estimatedTime}</strong> </h4>
                                     </div>
                                     {selectedProject ? (
-                                        <ul className={selectedProject.description.length < 6 ? "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto  text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal" : "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto phone:h-64 text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal"}>                                            {selectedProject?.description.map((description, index) => (
+                                        <ul className={selectedProject.description.length < 8 ? "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto  text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal" : "w-11/12 mx-auto p-3  overflow-scroll scrollbar-thin border-2 rounded-md border-customColor border h-auto phone:h-64 text-sm mt-5 leading-relaxed phone:leading-snug tracking-wide phone:tracking-normal"}>                                            {selectedProject?.description.map((description, index) => (
                                             <li key={index} className="w-full phone mb-2">
                                                 {description}
                                             </li>
