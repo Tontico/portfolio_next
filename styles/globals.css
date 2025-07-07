@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Play";
-  src: url("/fonts/Play/Play-Bold.ttf") format("truetype");
+  font-family: "Bebas";
+  src: url("/fonts/Bebas_Neue/BebasNeue-regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Changa";
-  src: url("/fonts/Changa/static/Changa-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Pridi";
-  src: url("/fonts/Pridi/Pridi-Regular.ttf") format("truetype");
+  font-family: "Cous";
+  src: url("/fonts/Cousine/Cousine-Regular.ttf") format("truetype");
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Changa", sans-serif;
+  font-family: "Cous", sans-serif;
   transition: background-color 0.4s ease-in-out;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
 }
 .dark {
   background-color: #1f2227;
@@ -28,17 +28,17 @@ body {
 }
 
 .light {
-  background-color: #f8f8f8;
+  background-color: #f5f2ee;
   color: rgb(51 65 85);
 }
 h1 {
-  font-family: "Play", sans-serif;
+  font-family: "Cous", sans-serif;
 }
 h2 {
-  font-family: "Pridi", sans-serif;
+  font-family: "Cous", sans-serif;
 }
 p {
-  font-family: "Changa", sans-serif;
+  font-family: "Cous", sans-serif;
 }
 #__next {
   width: 100%;
@@ -104,19 +104,18 @@ input:checked + .slider:before {
 }
 
 ::-webkit-scrollbar {
-  width: 7px; 
+  width: 7px;
   height: 0px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgb(81, 81, 81);
   border-radius: 5px;
 }
-
 
 @media (max-width: 992px) and (max-height: 720px) {
   .media-height {

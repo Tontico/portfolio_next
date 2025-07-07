@@ -1,10 +1,5 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import SwitchTheme from "./SwitchTheme";
+
 import { useEffect, useRef, useState } from "react";
-import Cookies from 'js-cookie';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 import axios from "axios";
 import Image from "next/image";

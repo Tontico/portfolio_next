@@ -20,7 +20,7 @@ const config: Config = {
         customText: ["Pridi", "sans"],
       },
       colors: {
-        customColor: "#40B5AD",
+        customColor: "#415A77",
         customDarkBg: "#1f2227",
         light: {
           primary: "#f8f8f8",
@@ -35,21 +35,23 @@ const config: Config = {
         customBg: "rgba(0, 0, 0, 0.5)",
         customPr: "rgba(0, 0, 0, 0.8)",
         customDarkBg: "#1f2227",
-        customColor: "#40B5AD",
+        customColor: "#415A77",
       },
       height: {
         custom: "650px",
         contact: "500px",
-        modal:"710px",
-        exp: "248px"
+        modal: "710px",
+        exp: "248px",
       },
       width: {
         custom: "700px",
       },
+      borderRadius: {
+        custom: "200px 200px 200px 200px / 25px 25px 25px 25px",
+      },
     },
     screens: {
-    
-      phone: { max: "1024px" }, 
+      phone: { max: "1024px" },
     },
   },
   plugins: [],
